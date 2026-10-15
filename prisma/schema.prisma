@@ -1,0 +1,440 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// Pessoa da equipe. ADMIN gerencia equipe, etiquetas e quadros; MEMBER trabalha nas demandas.
+model User {
+  id                 String    @id @default(cuid())
+  name               String
+  email              String    @unique
+  passwordHash       String
+  role               String    @default("MEMBER") // ADMIN | MEMBER
+  color              String    @default("#FAA422")
+  /// Cor do sistema escolhida pela pessoa (destaque, botões, menu ativo). null = verde-água padrão.
+  accentColor        String?
+  /// Foto de perfil (arquivo em storage/imagens, servido por /api/imagens)
+  avatarUrl          String?
+  /// Intensidade do vidro da interface, 0 (liso) a 100 (vidro máximo), ajustada numa barrinha
+  glassLevel         Int       @default(100)
+  active             Boolean   @default(true)
+  mustChangePassword Boolean   @default(false)
+  /// Sessões emitidas antes desta data deixam de valer (troca de senha, desativação).
+  sessionsValidFrom  DateTime  @default(now())
+  lastLoginAt        DateTime?
+  createdAt          DateTime  @default(now())
+
+  assignments   CardAssignee[]
+  comments      Comment[]
+  activities    Activity[]
+  notifications Notification[]  @relation("NotificationTo")
+  notified      Notification[]  @relation("NotificationFrom")
+  favorites     BoardFavorite[]
+  timeEntries   TimeEntry[]
+  cardsCreated  Card[]          @relation("CardCreatedBy")
+  attachments   Attachment[]
+}
+
+model Board {
+  id          String    @id @default(cuid())
+  name        String
+  description String?
+  color       String    @default("#FAA422")
+  position    Int       @default(0)
+  archivedAt  DateTime?
+  createdAt   DateTime  @default(now())
+
+  columns   Column[]
+  cards     Card[]
+  favorites BoardFavorite[]
+
+  /// Cliente padrão do quadro: demanda nova criada aqui já nasce com ele.
+  client   Client? @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  clientId String?
+
+  /// Link público só de leitura (para o cliente). Token aleatório; trocar o token invalida o link antigo.
+  shareToken     String?   @unique
+  shareCreatedAt DateTime?
+
+  /// Pasta opcional, só para organizar a tela de Quadros. Apagar a pasta solta os quadros.
+  folder   BoardFolder? @relation(fields: [folderId], references: [id], onDelete: SetNull)
+  folderId String?
+
+  @@index([archivedAt])
+  @@index([folderId])
+}
+
+/// Pasta de quadros (opcional): agrupa quadros por cliente, área ou projeto.
+model BoardFolder {
+  id        String   @id @default(cuid())
+  name      String
+  color     String   @default("#19C9A9")
+  position  Int      @default(0)
+  createdAt DateTime @default(now())
+  boards    Board[]
+}
+
+model BoardFavorite {
+  userId    String
+  boardId   String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  board     Board    @relation(fields: [boardId], references: [id], onDelete: Cascade)
+
+  @@id([userId, boardId])
+}
+
+model Column {
+  id        String   @id @default(cuid())
+  name      String
+  color     String?
+  position  Int      @default(0)
+  /// Demanda que entra nesta coluna é marcada como concluída (e reaberta ao sair).
+  isDone    Boolean  @default(false)
+  /// Limite de demandas em andamento (0 = sem limite). Só avisa, não bloqueia.
+  wipLimit  Int      @default(0)
+  createdAt DateTime @default(now())
+
+  board   Board  @relation(fields: [boardId], references: [id], onDelete: Cascade)
+  boardId String
+  cards   Card[]
+
+  @@index([boardId, position])
+}
+
+model Card {
+  id             String    @id @default(cuid())
+  /// Número sequencial curto (#123) para citar a demanda em conversa.
+  number         Int       @unique
+  title          String
+  description    String?
+  priority       String? // LOW | MEDIUM | HIGH | URGENT
+  startDate      DateTime?
+  dueDate        DateTime?
+  completedAt    DateTime?
+  archivedAt     DateTime?
+  coverColor     String?
+  /// Imagem dos anexos usada como capa (aparece no quadro)
+  coverAttachmentId String?
+  coverAttachment   Attachment? @relation("CardCover", fields: [coverAttachmentId], references: [id], onDelete: SetNull)
+  estimatedMin   Int?
+  repeatEvery    String? // DAILY | WEEKLY | MONTHLY
+  /// Já gerou a próxima repetição (concluir de novo não gera outra cópia).
+  repeatSpawned  Boolean   @default(false)
+  position       Int       @default(0)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  board       Board    @relation(fields: [boardId], references: [id], onDelete: Cascade)
+  boardId     String
+  column      Column   @relation(fields: [columnId], references: [id], onDelete: Cascade)
+  columnId    String
+  createdBy   User?    @relation("CardCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  createdById String?
+  client      Client?  @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  clientId    String?
+
+  assignees     CardAssignee[]
+  labels        CardLabel[]
+  checklists    Checklist[]
+  comments      Comment[]
+  attachments   Attachment[]
+  activities    Activity[]
+  notifications Notification[]
+  timeEntries   TimeEntry[]
+  approvalPost  ApprovalPost?
+
+  @@index([columnId, position])
+  @@index([boardId, archivedAt])
+  @@index([dueDate])
+  @@index([clientId])
+}
+
+model CardAssignee {
+  cardId String
+  userId String
+  card   Card   @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([cardId, userId])
+  @@index([userId])
+}
+
+/// Etiqueta da equipe (nome + cor), vale para qualquer quadro.
+model Label {
+  id       String      @id @default(cuid())
+  name     String
+  color    String
+  position Int         @default(0)
+  cards    CardLabel[]
+}
+
+model CardLabel {
+  cardId  String
+  labelId String
+  card    Card   @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  label   Label  @relation(fields: [labelId], references: [id], onDelete: Cascade)
+
+  @@id([cardId, labelId])
+  @@index([labelId])
+}
+
+model Checklist {
+  id       String          @id @default(cuid())
+  title    String
+  position Int             @default(0)
+  cardId   String
+  card     Card            @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  items    ChecklistItem[]
+
+  @@index([cardId])
+}
+
+model ChecklistItem {
+  id          String    @id @default(cuid())
+  text        String
+  done        Boolean   @default(false)
+  position    Int       @default(0)
+  checklistId String
+  checklist   Checklist @relation(fields: [checklistId], references: [id], onDelete: Cascade)
+
+  @@index([checklistId])
+}
+
+model Comment {
+  id        String    @id @default(cuid())
+  body      String
+  createdAt DateTime  @default(now())
+  editedAt  DateTime?
+  cardId    String
+  card      Card      @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([cardId, createdAt])
+}
+
+model Attachment {
+  id           String   @id @default(cuid())
+  name         String
+  /// Nome do arquivo dentro de storage/ (aleatório, nunca o nome enviado).
+  storedName   String   @unique
+  mime         String
+  size         Int
+  createdAt    DateTime @default(now())
+  cardId       String
+  card         Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  uploadedById String?
+  uploadedBy   User?    @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+  coverOf      Card[]   @relation("CardCover")
+
+  @@index([cardId])
+}
+
+/// Histórico da demanda (criou, moveu, mudou prazo...). `data` é JSON em texto.
+model Activity {
+  id        String   @id @default(cuid())
+  type      String
+  data      String   @default("{}")
+  createdAt DateTime @default(now())
+  cardId    String
+  card      Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([cardId, createdAt])
+}
+
+model Notification {
+  id        String    @id @default(cuid())
+  type      String // ASSIGNED | MENTION | COMMENT | DUE_SOON | MOVED
+  text      String
+  readAt    DateTime?
+  createdAt DateTime  @default(now())
+  userId    String
+  user      User      @relation("NotificationTo", fields: [userId], references: [id], onDelete: Cascade)
+  actorId   String?
+  actor     User?     @relation("NotificationFrom", fields: [actorId], references: [id], onDelete: SetNull)
+  cardId    String?
+  card      Card?     @relation(fields: [cardId], references: [id], onDelete: Cascade)
+
+  @@index([userId, readAt, createdAt])
+}
+
+/// Cronômetro: enquanto roda, endedAt é null.
+model TimeEntry {
+  id        String    @id @default(cuid())
+  startedAt DateTime  @default(now())
+  endedAt   DateTime?
+  cardId    String
+  card      Card      @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([cardId])
+  @@index([userId, endedAt])
+}
+
+/// Ações administrativas (quem, quando, o quê).
+model AuditLog {
+  id        String   @id @default(cuid())
+  action    String
+  detail    String?
+  actorId   String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+/// Configurações gerais da instalação (chave/valor). Ex.: "setupCompletedAt" = primeiro acesso já feito.
+model AppSetting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+/// Cliente da equipe (para quem a demanda é feita). Dados de contato comerciais, só o necessário.
+model Client {
+  id        String   @id @default(cuid())
+  name      String
+  contact   String?
+  email     String?
+  phone     String?
+  notes     String?
+  color     String   @default("#19C9A9")
+  /// Logo ou foto do cliente (circular)
+  imageUrl  String?
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  /// Link público onde o cliente aprova os posts (token aleatório; trocar invalida o antigo).
+  approvalToken String? @unique
+
+  cards         Card[]
+  boards        Board[]
+  approvalPosts ApprovalPost[]
+
+  @@index([active, name])
+}
+
+/// Modelo de demanda: título, texto, prioridade, estimativa, etiquetas e checklist prontos para reaproveitar.
+model CardTemplate {
+  id           String   @id @default(cuid())
+  name         String
+  title        String
+  description  String?
+  priority     String?
+  estimatedMin Int?
+  /// JSON: ["item 1", "item 2"]
+  checklist    String   @default("[]")
+  /// JSON: ["labelId", ...]
+  labelIds     String   @default("[]")
+  createdById  String?
+  createdAt    DateTime @default(now())
+}
+
+/// Modelo de quadro salvo pela equipe: colunas e, opcionalmente, demandas de partida.
+model BoardTemplate {
+  id          String   @id @default(cuid())
+  name        String
+  color       String
+  description String?
+  /// JSON: [{ name, color, isDone, wipLimit }]
+  columns     String
+  /// JSON: [{ column (índice), title, description, priority, checklist: [texto], labelIds }]
+  cards       String   @default("[]")
+  createdById String?
+  createdAt   DateTime @default(now())
+}
+
+/// Pedido de aprovação de uma demanda para o cliente (uma rodada por envio).
+/// Um post (ou peça) para o cliente aprovar. Pode nascer de uma demanda (cardId) ou avulso.
+/// Cada nova versão é uma rodada (Approval); a situação do post é a da última rodada, mais "publicado".
+model ApprovalPost {
+  id          String    @id @default(cuid())
+  /// Link só deste post (/aprovar/p/<token>); o link do cliente mostra todos os posts dele.
+  token       String    @unique
+  title       String
+  /// IMAGEM | CARROSSEL | REELS | STORIES | VIDEO | TEXTO
+  format      String
+  /// PENDING | CHANGES | APPROVED | PUBLISHED | CANCELED
+  status      String    @default("PENDING")
+  /// Quando o post vai ao ar (opcional, aparece para o cliente)
+  publishAt   DateTime?
+  clientId    String
+  client      Client    @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  cardId      String?   @unique
+  card        Card?     @relation(fields: [cardId], references: [id], onDelete: SetNull)
+  createdById String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  rounds   Approval[]
+  messages ApprovalMessage[]
+
+  @@index([clientId, status])
+  @@index([status, updatedAt])
+}
+
+/// Uma versão enviada ao cliente.
+model Approval {
+  id            String    @id @default(cuid())
+  round         Int       @default(1)
+  /// PENDING | APPROVED | CHANGES | CANCELED (substituída por outra versão ou arquivada)
+  status        String    @default("PENDING")
+  format        String
+  caption       String?
+  note          String?
+  sentAt        DateTime  @default(now())
+  decidedAt     DateTime?
+  /// Nome que o cliente digitou ao responder
+  decidedBy     String?
+  clientComment String?
+  /// JSON: o que o cliente marcou para ajustar (números das artes e/ou "legenda")
+  changeTargets String?
+  sentById      String?
+  postId        String?
+  post          ApprovalPost? @relation(fields: [postId], references: [id], onDelete: Cascade)
+  files         ApprovalFile[]
+
+  @@index([postId, sentAt])
+  @@index([status, sentAt])
+}
+
+/// Arte ou vídeo de uma versão. Cópia própria do arquivo: apagar o anexo da demanda não tira do cliente.
+/// Versões do mesmo post reaproveitam o arquivo (mesmo storedName). Sem approvalId = enviado e ainda não usado.
+model ApprovalFile {
+  id           String    @id @default(cuid())
+  name         String
+  storedName   String
+  mime         String
+  size         Int
+  position     Int       @default(0)
+  approvalId   String?
+  approval     Approval? @relation(fields: [approvalId], references: [id], onDelete: Cascade)
+  uploadedById String?
+  createdAt    DateTime  @default(now())
+
+  @@index([approvalId, position])
+  @@index([storedName])
+  @@index([uploadedById, createdAt])
+}
+
+/// Conversa do post entre o cliente (pelo link) e a equipe.
+model ApprovalMessage {
+  id        String       @id @default(cuid())
+  postId    String
+  post      ApprovalPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  /// CLIENT | TEAM
+  author    String
+  name      String
+  userId    String?
+  body      String
+  createdAt DateTime     @default(now())
+
+  @@index([postId, createdAt])
+}
