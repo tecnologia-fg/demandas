@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "TZ=America/Sao_Paulo next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "TZ=America/Sao_Paulo next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "db:push": "prisma db push",
+    "db:deploy": "prisma migrate deploy",
     "db:seed": "tsx --env-file=.env prisma/seed.ts",
     "db:reset": "prisma db push --force-reset --skip-generate && tsx --env-file=.env prisma/seed.ts"
   },

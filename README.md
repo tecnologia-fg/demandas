@@ -1,7 +1,11 @@
 # Dmanda, código do aluno
 
 Sistema de demandas da equipe em quadros kanban, com aprovação de posts pelo cliente.
-Feito com Next.js 16, React 19, Prisma 6 e SQLite.
+Feito com Next.js 16, React 19, Prisma 6 e PostgreSQL.
+
+Para configurar o banco Neon e as variáveis da Vercel, siga [VERCEL.md](VERCEL.md).
+O guia antigo de VPS em INSTALACAO.md descreve a configuração anterior com SQLite;
+as instruções de banco `file:...` desse guia não se aplicam ao schema atual.
 
 ## Guias
 
@@ -39,7 +43,7 @@ Feito com Next.js 16, React 19, Prisma 6 e SQLite.
 ```bash
 npm install
 cp .env.example .env      # preencha SESSION_SECRET (openssl rand -base64 48) e SEED_ADMIN_PASSWORD
-npx prisma db push
+npm run db:deploy        # preencha DATABASE_URL e DIRECT_URL antes
 npm run db:seed           # opcional, dados de demonstração fictícios
 npm run dev               # abra http://localhost:3000
 ```

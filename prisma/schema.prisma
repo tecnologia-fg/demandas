@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 /// Pessoa da equipe. ADMIN gerencia equipe, etiquetas e quadros; MEMBER trabalha nas demandas.
@@ -107,35 +108,35 @@ model Column {
 }
 
 model Card {
-  id             String    @id @default(cuid())
+  id                String      @id @default(cuid())
   /// Número sequencial curto (#123) para citar a demanda em conversa.
-  number         Int       @unique
-  title          String
-  description    String?
-  priority       String? // LOW | MEDIUM | HIGH | URGENT
-  startDate      DateTime?
-  dueDate        DateTime?
-  completedAt    DateTime?
-  archivedAt     DateTime?
-  coverColor     String?
+  number            Int         @unique
+  title             String
+  description       String?
+  priority          String? // LOW | MEDIUM | HIGH | URGENT
+  startDate         DateTime?
+  dueDate           DateTime?
+  completedAt       DateTime?
+  archivedAt        DateTime?
+  coverColor        String?
   /// Imagem dos anexos usada como capa (aparece no quadro)
   coverAttachmentId String?
   coverAttachment   Attachment? @relation("CardCover", fields: [coverAttachmentId], references: [id], onDelete: SetNull)
-  estimatedMin   Int?
-  repeatEvery    String? // DAILY | WEEKLY | MONTHLY
+  estimatedMin      Int?
+  repeatEvery       String? // DAILY | WEEKLY | MONTHLY
   /// Já gerou a próxima repetição (concluir de novo não gera outra cópia).
-  repeatSpawned  Boolean   @default(false)
-  position       Int       @default(0)
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
+  repeatSpawned     Boolean     @default(false)
+  position          Int         @default(0)
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
 
-  board       Board    @relation(fields: [boardId], references: [id], onDelete: Cascade)
+  board       Board   @relation(fields: [boardId], references: [id], onDelete: Cascade)
   boardId     String
-  column      Column   @relation(fields: [columnId], references: [id], onDelete: Cascade)
+  column      Column  @relation(fields: [columnId], references: [id], onDelete: Cascade)
   columnId    String
-  createdBy   User?    @relation("CardCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  createdBy   User?   @relation("CardCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
   createdById String?
-  client      Client?  @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  client      Client? @relation(fields: [clientId], references: [id], onDelete: SetNull)
   clientId    String?
 
   assignees     CardAssignee[]
@@ -382,14 +383,14 @@ model ApprovalPost {
 
 /// Uma versão enviada ao cliente.
 model Approval {
-  id            String    @id @default(cuid())
-  round         Int       @default(1)
+  id            String         @id @default(cuid())
+  round         Int            @default(1)
   /// PENDING | APPROVED | CHANGES | CANCELED (substituída por outra versão ou arquivada)
-  status        String    @default("PENDING")
+  status        String         @default("PENDING")
   format        String
   caption       String?
   note          String?
-  sentAt        DateTime  @default(now())
+  sentAt        DateTime       @default(now())
   decidedAt     DateTime?
   /// Nome que o cliente digitou ao responder
   decidedBy     String?
@@ -398,7 +399,7 @@ model Approval {
   changeTargets String?
   sentById      String?
   postId        String?
-  post          ApprovalPost? @relation(fields: [postId], references: [id], onDelete: Cascade)
+  post          ApprovalPost?  @relation(fields: [postId], references: [id], onDelete: Cascade)
   files         ApprovalFile[]
 
   @@index([postId, sentAt])
