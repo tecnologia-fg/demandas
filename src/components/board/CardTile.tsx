@@ -137,7 +137,13 @@ function CardBody({ card, actions, dragging }: { card: CardSummary; actions?: Ca
             <RoundCheck checked={done} label={done ? "Reabrir demanda" : "Concluir demanda"} size={19} onChange={() => actions.toggleComplete(card.id)} />
           </span>
         )}
-        <p className={cn("min-w-0 flex-1 text-[14.5px] font-medium leading-snug [overflow-wrap:anywhere]", done && "text-fg-3 line-through decoration-fg-3/60")}>{card.title}</p>
+        <p className={cn("min-w-0 flex-1 text-[14.5px] font-medium leading-snug [overflow-wrap:anywhere]", done && "text-fg-3 line-through decoration-fg-3/60")}>
+          {actions ? <button type="button" className="w-full cursor-pointer text-left [overflow-wrap:anywhere] focus-visible:outline-2 focus-visible:outline-accent"
+            onPointerDown={(event) => event.stopPropagation()}
+            onKeyDown={(event) => event.stopPropagation()}
+            onClick={(event) => { event.stopPropagation(); actions.open(card.id); }}
+          >{card.title}</button> : card.title}
+        </p>
       </div>
 
       {(card.priority || card.dueDate || card.approval) && (

@@ -64,23 +64,11 @@ function NewCardInner({ open, onClose, boardId, boardClientId, columns, onCreate
       <div className="grid gap-4">
         {templates.length > 0 && (
           <Field group label="Começar de um modelo">
-            <div className="flex flex-wrap gap-1.5">
-              {templates.map((t) => (
-                <button
-                  key={t.id}
-                  type="button"
-                  onClick={() => {
-                    const on = templateId === t.id;
-                    setTemplateId(on ? null : t.id);
-                    if (!on && !title.trim()) setTitle(t.title);
-                  }}
-                  className={cn("inline-flex h-9 items-center rounded-full px-3.5 text-[13px] font-medium transition-colors", templateId === t.id ? "bg-accent text-accent-ink" : "bg-surface-2 text-fg-2 hover:text-fg")}
-                >
-                  {t.name}
-                  {t.checklist.length > 0 && <span className="ml-1.5 text-[11px] opacity-70">{t.checklist.length} itens</span>}
-                </button>
-              ))}
-            </div>
+            <select aria-label="Começar de um modelo" className="w-full rounded-xl border border-border bg-surface p-3 text-sm" value={templateId ?? ""} onChange={(e) => {
+              const selected = templates.find((t) => t.id === e.target.value);
+              setTemplateId(selected?.id ?? null); if (selected && !title.trim()) setTitle(selected.title);
+            }}><option value="">Sem modelo</option>{templates.map((t) => <option key={t.id} value={t.id}>{t.name}</option>)}</select>
+            {templateId && <p className="text-xs text-fg-3">Texto, etiquetas e checklists serão copiados. Os anexos disponíveis terão cópias próprias.</p>}
           </Field>
         )}
         <Field label="Título">

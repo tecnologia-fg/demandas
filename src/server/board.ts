@@ -7,13 +7,13 @@ export async function loadBoard(boardId: string, userId: string): Promise<BoardD
   const board = await db.board.findFirst({
     where: { id: boardId, archivedAt: null },
     include: {
-      columns: { orderBy: { position: "asc" } },
+      columns: { where: { archivedAt: null }, orderBy: { position: "asc" } },
       favorites: { where: { userId }, select: { userId: true } },
     },
   });
   if (!board) return null;
   const cards = await db.card.findMany({
-    where: { boardId, archivedAt: null },
+    where: { boardId, archivedAt: null, isTemplate: false, column: { archivedAt: null } },
     orderBy: [{ position: "asc" }, { createdAt: "asc" }],
     include: cardSummaryInclude,
     take: 2000,

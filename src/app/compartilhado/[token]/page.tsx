@@ -25,9 +25,9 @@ export default async function SharedBoardPage({ params }: { params: Promise<{ to
   const board = await findBoard((await params).token);
   if (!board) notFound();
   const [columns, cards] = await Promise.all([
-    db.column.findMany({ where: { boardId: board.id }, orderBy: { position: "asc" }, select: { id: true, name: true, color: true, isDone: true } }),
+    db.column.findMany({ where: { boardId: board.id, archivedAt: null }, orderBy: { position: "asc" }, select: { id: true, name: true, color: true, isDone: true } }),
     db.card.findMany({
-      where: { boardId: board.id, archivedAt: null },
+      where: { boardId: board.id, archivedAt: null, isTemplate: false, column: { archivedAt: null } },
       orderBy: [{ position: "asc" }, { createdAt: "asc" }],
       take: 1000,
       select: {

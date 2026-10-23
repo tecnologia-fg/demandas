@@ -1,0 +1,31 @@
+import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
+import { readFile, mkdir, writeFile } from "node:fs/promises";
+import { PrismaClient } from "@prisma/client";
+assert.equal(process.env.TRELLO_REHEARSAL, "1");
+const url = new URL(process.env.DATABASE_URL); assert.equal(url.hostname, "db"); assert.equal(url.pathname, "/dmanda_trello_rehearsal");
+const admin = new PrismaClient(), databaseName = `dmanda_migration_review_${Date.now()}`;
+await admin.$executeRawUnsafe(`CREATE DATABASE "${databaseName}"`); await admin.$disconnect(); url.pathname = `/${databaseName}`;
+const env = { ...process.env, DATABASE_URL: url.href, DIRECT_URL: url.href }, db = new PrismaClient({ datasourceUrl: url.href });
+const root = `research/trello/local/rehearsal/${databaseName}`; await mkdir(root, { recursive: true });
+const run = (args) => { const r = spawnSync(args[0], args.slice(1), { env, encoding: "utf8", timeout: 120000 }); assert.equal(r.status, 0, r.stderr); };
+try {
+  run(["npx", "prisma", "db", "execute", "--schema", "prisma/schema.prisma", "--file", "prisma/migrations/20261015000000_init_postgresql/migration.sql"]);
+  await db.$executeRaw`INSERT INTO "User" (id, email, name, "passwordHash") VALUES ('old_user', 'existing@example.invalid', 'Equipe existente', 'unchanged-password-hash')`;
+  await db.$executeRaw`INSERT INTO "Client" (id, name) VALUES ('old_client', 'Cliente existente')`;
+  await db.$executeRaw`INSERT INTO "Board" (id, name, "clientId") VALUES ('old_board', 'Quadro existente', 'old_client')`;
+  await db.$executeRaw`INSERT INTO "Column" (id, name, "boardId") VALUES ('old_column', 'Coluna existente', 'old_board')`;
+  await db.$executeRaw`INSERT INTO "Card" (id, number, title, "boardId", "columnId", "updatedAt") VALUES ('old_card', 1, 'Demanda existente', 'old_board', 'old_column', NOW())`;
+  await db.$executeRaw`INSERT INTO "Comment" (id, body, "cardId", "userId") VALUES ('old_comment', 'Comentário existente', 'old_card', 'old_user')`;
+  const usersBefore = await db.user.findMany(), clientsBefore = await db.client.findMany();
+  run(["node", "scripts/trello/export-catalog.mjs", `${root}/legacy-catalog.json`]);
+  const catalog = JSON.parse(await readFile(`${root}/legacy-catalog.json`, "utf8")); assert.equal(catalog.users[0].id, "old_user"); assert.equal(catalog.boards[0].columns[0].id, "old_column");
+  run(["npx", "prisma", "migrate", "resolve", "--applied", "20261015000000_init_postgresql"]);
+  run(["npx", "prisma", "migrate", "deploy"]);
+  assert.deepEqual(await db.user.findMany(), usersBefore); assert.deepEqual(await db.client.findMany(), clientsBefore);
+  assert.equal((await db.card.findUnique({ where: { id: "old_card" } })).isTemplate, false);
+  assert.equal((await db.column.findUnique({ where: { id: "old_column" } })).archivedAt, null);
+  assert.equal((await db.comment.findUnique({ where: { id: "old_comment" } })).userId, "old_user");
+  const report = { checkedAt: new Date().toISOString(), existingUsersAndPasswordsPreserved: true, existingClientsPreserved: true, existingCommentsPreserved: true, legacyCatalogWorksBeforeMigration: true, migrationApplied: true };
+  await writeFile(`${root}/verification.json`, JSON.stringify(report, null, 2)); console.log(JSON.stringify(report));
+} finally { await db.$disconnect(); }

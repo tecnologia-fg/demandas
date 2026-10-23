@@ -18,17 +18,17 @@ export default async function HomePage() {
   const weekAgo = daysAgo(7);
   const [mine, doneWeek, favorites, activity, lookups] = await Promise.all([
     db.card.findMany({
-      where: { archivedAt: null, completedAt: null, board: { archivedAt: null }, assignees: { some: { userId: user.id } } },
+      where: { archivedAt: null, isTemplate: false, column: { archivedAt: null }, completedAt: null, board: { archivedAt: null }, assignees: { some: { userId: user.id } } },
       include: { ...cardSummaryInclude, board: { select: { name: true, color: true } }, column: { select: { name: true } } },
       orderBy: [{ dueDate: "asc" }, { createdAt: "asc" }],
       take: 300,
     }),
-    db.card.count({ where: { completedAt: { gte: weekAgo }, assignees: { some: { userId: user.id } } } }),
+    db.card.count({ where: { isTemplate: false, column: { archivedAt: null }, completedAt: { gte: weekAgo }, assignees: { some: { userId: user.id } } } }),
     db.board.findMany({
       where: { archivedAt: null, favorites: { some: { userId: user.id } } },
       orderBy: { position: "asc" },
       take: 8,
-      select: { id: true, name: true, color: true, _count: { select: { cards: { where: { archivedAt: null, completedAt: null } } } } },
+      select: { id: true, name: true, color: true, _count: { select: { cards: { where: { archivedAt: null, isTemplate: false, column: { archivedAt: null }, completedAt: null } } } } },
     }),
     db.activity.findMany({
       where: { card: { board: { archivedAt: null } }, type: { in: ["created", "moved", "completed", "attachment", "assigned"] } },

@@ -1,7 +1,9 @@
 import "server-only";
 import path from "path";
 
-export const STORAGE_DIR = path.join(process.cwd(), "storage");
+// Set an absolute destination mounted persistently by Coolify in production.
+// The default preserves existing installations and the local Docker rehearsal.
+export const STORAGE_DIR = path.resolve(process.env.STORAGE_DIR?.trim() || path.join(process.cwd(), "storage"));
 export const MAX_UPLOAD = 25 * 1024 * 1024; // 25 MB
 
 /** Lista branca: extensão -> tipo servido. Nada de SVG/HTML/executável. */

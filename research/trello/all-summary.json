@@ -1,0 +1,3007 @@
+[
+  {
+    "name": "Master Med",
+    "sourceId": "69c6c0750ff4946f159b3e9e",
+    "filename": "42ooeXhg - master-med.json",
+    "sha256": "914d13a80df1bc7864bde5b9da31a863d78f6aba4b6f87c05e2256686e4e3307",
+    "bytes": 2990199,
+    "cards": 166,
+    "archivedCards": 7,
+    "dueCompleteCards": 148,
+    "withDue": 127,
+    "withStart": 0,
+    "withDescription": 156,
+    "members": 9,
+    "labels": 7,
+    "lists": [
+      {
+        "id": "69c6c0750ff4946f159b3e9d",
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c6c0750ff4946f159b3e96",
+        "name": "JOBS",
+        "closed": false,
+        "cards": 2
+      },
+      {
+        "id": "69d3cc8759a16c7724ded94c",
+        "name": "DOCUMENTOS",
+        "closed": false,
+        "cards": 8
+      },
+      {
+        "id": "69c6c0750ff4946f159b3e95",
+        "name": "CAIXA DE ENTRADA",
+        "closed": false,
+        "cards": 12
+      },
+      {
+        "id": "69c6c0750ff4946f159b3e97",
+        "name": "EM PRODUÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c0750ff4946f159b3e98",
+        "name": "REVISÃO INTERNA",
+        "closed": false,
+        "cards": 4
+      },
+      {
+        "id": "69c6c0750ff4946f159b3e9a",
+        "name": "AJUSTES",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c6c0750ff4946f159b3e9b",
+        "name": "APROVADO / AGENDAR",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c0750ff4946f159b3e99",
+        "name": "EM APROVAÇÃO",
+        "closed": false,
+        "cards": 4
+      },
+      {
+        "id": "69c6c0750ff4946f159b3e9c",
+        "name": "CONCLUÍDO",
+        "closed": false,
+        "cards": 134
+      }
+    ],
+    "checklists": 0,
+    "checklistItems": 0,
+    "customFields": [
+      {
+        "name": "Prioridade",
+        "type": "list",
+        "options": [
+          "Normal",
+          "Alta",
+          "Urgente"
+        ],
+        "values": {
+          "Normal": 125,
+          "Alta": 15,
+          "Urgente": 5
+        }
+      },
+      {
+        "name": "Tipo de Entrega",
+        "type": "list",
+        "options": [
+          "Post Estático",
+          "Carrossel",
+          "Reels / Vídeo Curto",
+          "Vídeo Longo",
+          "Story",
+          "Landing Page",
+          "Website",
+          "Campanha Ads",
+          "Relatório",
+          "Material Gráfico",
+          "Outro"
+        ],
+        "values": {
+          "Outro": 12,
+          "Reels / Vídeo Curto": 28,
+          "Post Estático": 57,
+          "Carrossel": 37,
+          "Story": 8,
+          "Material Gráfico": 1
+        }
+      },
+      {
+        "name": "Pasta do Drive",
+        "type": "text",
+        "options": [],
+        "values": {
+          "(preenchido)": 105
+        }
+      }
+    ],
+    "attachments": 284,
+    "attachmentBytes": 409889011,
+    "attachmentsOver25MB": 2,
+    "attachmentExtensions": {
+      ".pdf": 7,
+      ".png": 204,
+      ".docx": 9,
+      ".doc": 1,
+      ".pptx": 3,
+      ".jpeg": 24,
+      ".m4a": 2,
+      ".jpg": 29,
+      ".gif": 3,
+      ".psd": 2
+    },
+    "actions": 1000,
+    "actionTypes": {
+      "updateCard": 638,
+      "addMemberToCard": 76,
+      "updateCustomFieldItem": 128,
+      "createCard": 44,
+      "addAttachmentToCard": 85,
+      "removeMemberFromCard": 17,
+      "moveCardFromBoard": 1,
+      "commentCard": 9,
+      "updateList": 1,
+      "deleteAttachmentFromCard": 1
+    },
+    "actionRange": {
+      "oldest": "2026-08-26T18:16:04.987Z",
+      "newest": "2026-10-21T18:48:33.067Z"
+    },
+    "exportedComments": 9,
+    "badgeComments": 20,
+    "actionsForAbsentCards": 20,
+    "priorityDistribution": {
+      "(vazio)": 21,
+      "MEDIUM": 125,
+      "HIGH": 15,
+      "URGENT": 5
+    },
+    "completionByList": [
+      {
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "total": 1,
+        "dueComplete": 0
+      },
+      {
+        "name": "JOBS",
+        "total": 2,
+        "dueComplete": 0
+      },
+      {
+        "name": "DOCUMENTOS",
+        "total": 8,
+        "dueComplete": 7
+      },
+      {
+        "name": "CAIXA DE ENTRADA",
+        "total": 12,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM PRODUÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "REVISÃO INTERNA",
+        "total": 4,
+        "dueComplete": 3
+      },
+      {
+        "name": "AJUSTES",
+        "total": 1,
+        "dueComplete": 1
+      },
+      {
+        "name": "APROVADO / AGENDAR",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM APROVAÇÃO",
+        "total": 4,
+        "dueComplete": 4
+      },
+      {
+        "name": "CONCLUÍDO",
+        "total": 134,
+        "dueComplete": 133
+      }
+    ],
+    "warnings": {
+      "Comentários incompletos no export": 10
+    }
+  },
+  {
+    "name": "SPMAR - Complexo Alto do Tietê",
+    "sourceId": "69cc2095780821c0524d235c",
+    "filename": "7zZoZrQH - spmar-complexo-alto-do-tiete.json",
+    "sha256": "57d09475a7a2c7742f99ad3c5efff6bb55c4cf07b8d845e433c911f45eb032f6",
+    "bytes": 220883,
+    "cards": 9,
+    "archivedCards": 0,
+    "dueCompleteCards": 7,
+    "withDue": 4,
+    "withStart": 0,
+    "withDescription": 8,
+    "members": 9,
+    "labels": 7,
+    "lists": [
+      {
+        "id": "69cc2095780821c0524d235b",
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69cc2095780821c0524d2354",
+        "name": "IDEIAS",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69cc2095780821c0524d2353",
+        "name": "CAIXA DE ENTRADA",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69cc2095780821c0524d2355",
+        "name": "EM PRODUÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69cc2095780821c0524d2356",
+        "name": "REVISÃO INTERNA",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69cc2095780821c0524d2357",
+        "name": "EM APROVAÇÃO",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69cc2095780821c0524d2358",
+        "name": "AJUSTES",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69cc2095780821c0524d2359",
+        "name": "APROVADO / AGENDAR",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69cc2095780821c0524d235a",
+        "name": "CONCLUÍDO",
+        "closed": false,
+        "cards": 5
+      }
+    ],
+    "checklists": 0,
+    "checklistItems": 0,
+    "customFields": [
+      {
+        "name": "Prioridade",
+        "type": "list",
+        "options": [
+          "Normal",
+          "Alta",
+          "Urgente"
+        ],
+        "values": {
+          "Normal": 3,
+          "Alta": 2
+        }
+      },
+      {
+        "name": "Tipo de Entrega",
+        "type": "list",
+        "options": [
+          "Post Estático",
+          "Carrossel",
+          "Reels / Vídeo Curto",
+          "Vídeo Longo",
+          "Story",
+          "Landing Page",
+          "Website",
+          "Campanha Ads",
+          "Relatório",
+          "Material Gráfico",
+          "Outro"
+        ],
+        "values": {
+          "Material Gráfico": 2,
+          "Website": 1
+        }
+      },
+      {
+        "name": "Pasta do Drive",
+        "type": "text",
+        "options": [],
+        "values": {
+          "(preenchido)": 4
+        }
+      }
+    ],
+    "attachments": 6,
+    "attachmentBytes": 32730336,
+    "attachmentsOver25MB": 1,
+    "attachmentExtensions": {
+      ".png": 1,
+      ".jpeg": 4,
+      ".pdf": 1
+    },
+    "actions": 122,
+    "actionTypes": {
+      "removeMemberFromCard": 1,
+      "updateCard": 62,
+      "addMemberToCard": 11,
+      "addAttachmentToCard": 6,
+      "updateCustomFieldItem": 9,
+      "createCard": 5,
+      "deactivatedMemberInBoard": 3,
+      "commentCard": 4,
+      "addMemberToBoard": 13,
+      "copyCard": 2,
+      "updateBoard": 2,
+      "enablePlugin": 2,
+      "addToOrganizationBoard": 1,
+      "copyBoard": 1
+    },
+    "actionRange": {
+      "oldest": "2026-03-31T19:29:25.222Z",
+      "newest": "2026-09-18T18:46:34.873Z"
+    },
+    "exportedComments": 4,
+    "badgeComments": 4,
+    "actionsForAbsentCards": 0,
+    "priorityDistribution": {
+      "(vazio)": 4,
+      "MEDIUM": 3,
+      "HIGH": 2
+    },
+    "completionByList": [
+      {
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "total": 1,
+        "dueComplete": 0
+      },
+      {
+        "name": "IDEIAS",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "CAIXA DE ENTRADA",
+        "total": 1,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM PRODUÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "REVISÃO INTERNA",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM APROVAÇÃO",
+        "total": 1,
+        "dueComplete": 1
+      },
+      {
+        "name": "AJUSTES",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "APROVADO / AGENDAR",
+        "total": 1,
+        "dueComplete": 1
+      },
+      {
+        "name": "CONCLUÍDO",
+        "total": 5,
+        "dueComplete": 5
+      }
+    ],
+    "warnings": {}
+  },
+  {
+    "name": "Liquitudo",
+    "sourceId": "69c6c154f0478dc486ed668d",
+    "filename": "ECfsYz7F - liquitudo.json",
+    "sha256": "98b886a8a04a509841e0547b2f08ef84157cb7e69407486595abcbea25649289",
+    "bytes": 581223,
+    "cards": 29,
+    "archivedCards": 6,
+    "dueCompleteCards": 17,
+    "withDue": 16,
+    "withStart": 0,
+    "withDescription": 23,
+    "members": 7,
+    "labels": 7,
+    "lists": [
+      {
+        "id": "69c6c154f0478dc486ed668c",
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "closed": false,
+        "cards": 4
+      },
+      {
+        "id": "69c6c154f0478dc486ed6685",
+        "name": "IDEIAS",
+        "closed": true,
+        "cards": 0
+      },
+      {
+        "id": "69c6c154f0478dc486ed6684",
+        "name": "CAIXA DE ENTRADA",
+        "closed": false,
+        "cards": 6
+      },
+      {
+        "id": "69c6c154f0478dc486ed6686",
+        "name": "EM PRODUÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c154f0478dc486ed6687",
+        "name": "REVISÃO INTERNA",
+        "closed": true,
+        "cards": 0
+      },
+      {
+        "id": "69c6c154f0478dc486ed6688",
+        "name": "EM APROVAÇÃO",
+        "closed": false,
+        "cards": 9
+      },
+      {
+        "id": "69c6c154f0478dc486ed6689",
+        "name": "AJUSTES",
+        "closed": true,
+        "cards": 0
+      },
+      {
+        "id": "69c6c154f0478dc486ed668a",
+        "name": "APROVADO / AGENDAR",
+        "closed": true,
+        "cards": 0
+      },
+      {
+        "id": "69d3e758fd2b9b11c3731924",
+        "name": "APROVADO",
+        "closed": true,
+        "cards": 0
+      },
+      {
+        "id": "69c6c154f0478dc486ed668b",
+        "name": "APROVADO - CONCLUÍDO",
+        "closed": false,
+        "cards": 10
+      }
+    ],
+    "checklists": 1,
+    "checklistItems": 5,
+    "customFields": [
+      {
+        "name": "Prioridade",
+        "type": "list",
+        "options": [
+          "Normal",
+          "Alta",
+          "Urgente"
+        ],
+        "values": {
+          "Normal": 1,
+          "Alta": 1
+        }
+      },
+      {
+        "name": "Tipo de Entrega",
+        "type": "list",
+        "options": [
+          "Post Estático",
+          "Carrossel",
+          "Reels / Vídeo Curto",
+          "Vídeo Longo",
+          "Story",
+          "Landing Page",
+          "Website",
+          "Campanha Ads",
+          "Relatório",
+          "Material Gráfico",
+          "Outro"
+        ],
+        "values": {}
+      },
+      {
+        "name": "Pasta do Drive",
+        "type": "text",
+        "options": [],
+        "values": {}
+      }
+    ],
+    "attachments": 40,
+    "attachmentBytes": 83600803,
+    "attachmentsOver25MB": 0,
+    "attachmentExtensions": {
+      ".png": 39,
+      ".pdf": 1
+    },
+    "actions": 312,
+    "actionTypes": {
+      "updateCard": 173,
+      "commentCard": 11,
+      "addMemberToCard": 20,
+      "createCard": 27,
+      "addAttachmentToCard": 42,
+      "deactivatedMemberInBoard": 3,
+      "updateList": 8,
+      "deleteAttachmentFromCard": 2,
+      "createList": 1,
+      "updateCheckItemStateOnCard": 4,
+      "removeMemberFromCard": 2,
+      "updateCustomFieldItem": 1,
+      "addChecklistToCard": 1,
+      "addMemberToBoard": 11,
+      "updateBoard": 2,
+      "enablePlugin": 2,
+      "addToOrganizationBoard": 1,
+      "copyBoard": 1
+    },
+    "actionRange": {
+      "oldest": "2026-03-27T17:41:40.166Z",
+      "newest": "2026-09-11T16:57:15.776Z"
+    },
+    "exportedComments": 11,
+    "badgeComments": 11,
+    "actionsForAbsentCards": 0,
+    "priorityDistribution": {
+      "(vazio)": 27,
+      "MEDIUM": 1,
+      "HIGH": 1
+    },
+    "completionByList": [
+      {
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "total": 4,
+        "dueComplete": 0
+      },
+      {
+        "name": "IDEIAS",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "CAIXA DE ENTRADA",
+        "total": 6,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM PRODUÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "REVISÃO INTERNA",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM APROVAÇÃO",
+        "total": 9,
+        "dueComplete": 8
+      },
+      {
+        "name": "AJUSTES",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "APROVADO / AGENDAR",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "APROVADO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "APROVADO - CONCLUÍDO",
+        "total": 10,
+        "dueComplete": 9
+      }
+    ],
+    "warnings": {}
+  },
+  {
+    "name": "_Formula Group",
+    "sourceId": "69c6c00c4828d3840d2657be",
+    "filename": "Ial0vdD8 - formula-group.json",
+    "sha256": "f48927299ca0e493e1e93db1bb28bffe5532ca43cc8750c2d3c2a207b8582154",
+    "bytes": 360101,
+    "cards": 18,
+    "archivedCards": 1,
+    "dueCompleteCards": 7,
+    "withDue": 12,
+    "withStart": 0,
+    "withDescription": 17,
+    "members": 7,
+    "labels": 7,
+    "lists": [
+      {
+        "id": "69c6c00c4828d3840d2657bd",
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c6c00c4828d3840d2657b6",
+        "name": "IDEIAS",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c00c4828d3840d2657b5",
+        "name": "CAIXA DE ENTRADA",
+        "closed": false,
+        "cards": 7
+      },
+      {
+        "id": "69c6c00c4828d3840d2657b7",
+        "name": "EM PRODUÇÃO",
+        "closed": false,
+        "cards": 2
+      },
+      {
+        "id": "69c6c00c4828d3840d2657b8",
+        "name": "REVISÃO INTERNA",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c00c4828d3840d2657b9",
+        "name": "EM APROVAÇÃO",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c6c00c4828d3840d2657ba",
+        "name": "AJUSTES",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c00c4828d3840d2657bb",
+        "name": "APROVADO / AGENDAR",
+        "closed": false,
+        "cards": 2
+      },
+      {
+        "id": "69c6c00c4828d3840d2657bc",
+        "name": "CONCLUÍDO",
+        "closed": false,
+        "cards": 5
+      }
+    ],
+    "checklists": 1,
+    "checklistItems": 19,
+    "customFields": [
+      {
+        "name": "Prioridade",
+        "type": "list",
+        "options": [
+          "Normal",
+          "Alta",
+          "Urgente"
+        ],
+        "values": {
+          "Normal": 15
+        }
+      },
+      {
+        "name": "Tipo de Entrega",
+        "type": "list",
+        "options": [
+          "Post Estático",
+          "Carrossel",
+          "Reels / Vídeo Curto",
+          "Vídeo Longo",
+          "Story",
+          "Landing Page",
+          "Website",
+          "Campanha Ads",
+          "Relatório",
+          "Material Gráfico",
+          "Outro"
+        ],
+        "values": {
+          "Reels / Vídeo Curto": 12
+        }
+      },
+      {
+        "name": "Pasta do Drive",
+        "type": "text",
+        "options": [],
+        "values": {}
+      }
+    ],
+    "attachments": 0,
+    "attachmentBytes": 0,
+    "attachmentsOver25MB": 0,
+    "attachmentExtensions": {},
+    "actions": 234,
+    "actionTypes": {
+      "updateCard": 106,
+      "addMemberToCard": 53,
+      "updateCustomFieldItem": 24,
+      "createCard": 13,
+      "removeMemberFromCard": 1,
+      "addMemberToBoard": 6,
+      "copyCard": 3,
+      "updateCheckItemStateOnCard": 21,
+      "addChecklistToCard": 1,
+      "updateBoard": 2,
+      "enablePlugin": 2,
+      "addToOrganizationBoard": 1,
+      "copyBoard": 1
+    },
+    "actionRange": {
+      "oldest": "2026-03-27T17:36:12.912Z",
+      "newest": "2026-09-09T17:26:16.691Z"
+    },
+    "exportedComments": 0,
+    "badgeComments": 0,
+    "actionsForAbsentCards": 0,
+    "priorityDistribution": {
+      "(vazio)": 3,
+      "MEDIUM": 15
+    },
+    "completionByList": [
+      {
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "total": 1,
+        "dueComplete": 0
+      },
+      {
+        "name": "IDEIAS",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "CAIXA DE ENTRADA",
+        "total": 7,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM PRODUÇÃO",
+        "total": 2,
+        "dueComplete": 0
+      },
+      {
+        "name": "REVISÃO INTERNA",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM APROVAÇÃO",
+        "total": 1,
+        "dueComplete": 0
+      },
+      {
+        "name": "AJUSTES",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "APROVADO / AGENDAR",
+        "total": 2,
+        "dueComplete": 2
+      },
+      {
+        "name": "CONCLUÍDO",
+        "total": 5,
+        "dueComplete": 5
+      }
+    ],
+    "warnings": {}
+  },
+  {
+    "name": "SUPERBOM",
+    "sourceId": "69c3e1ef35b848ba043eebeb",
+    "filename": "QfUX6XlF - superbom.json",
+    "sha256": "d194eb9e7896c020b1f9a191ea904a12df8980cb3b732fedeea4f7ecaf0ac86b",
+    "bytes": 2420792,
+    "cards": 165,
+    "archivedCards": 3,
+    "dueCompleteCards": 150,
+    "withDue": 144,
+    "withStart": 0,
+    "withDescription": 161,
+    "members": 9,
+    "labels": 7,
+    "lists": [
+      {
+        "id": "69c3f76d2cd4e47e6cd0aa6c",
+        "name": "CAPTACÃO | REUNIÃO",
+        "closed": false,
+        "cards": 2
+      },
+      {
+        "id": "69c3e1ef35b848ba043eebe3",
+        "name": "IDEIAS",
+        "closed": false,
+        "cards": 2
+      },
+      {
+        "id": "69c3e1ef35b848ba043eebe2",
+        "name": "CAIXA DE ENTRADA",
+        "closed": false,
+        "cards": 12
+      },
+      {
+        "id": "69c3e1ef35b848ba043eebe4",
+        "name": "EM PLANEJAMENTO",
+        "closed": true,
+        "cards": 0
+      },
+      {
+        "id": "69c3e1ef35b848ba043eebe5",
+        "name": "EM PRODUÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c3e1ef35b848ba043eebe6",
+        "name": "REVISÃO INTERNA",
+        "closed": false,
+        "cards": 4
+      },
+      {
+        "id": "69c3e1ef35b848ba043eebe7",
+        "name": "EM APROVAÇÃO",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c3e1ef35b848ba043eebe8",
+        "name": "AJUSTES",
+        "closed": false,
+        "cards": 7
+      },
+      {
+        "id": "69c3e1ef35b848ba043eebe9",
+        "name": "APROVADO / AGENDAR",
+        "closed": false,
+        "cards": 2
+      },
+      {
+        "id": "69c3e1ef35b848ba043eebea",
+        "name": "CONCLUÍDO",
+        "closed": false,
+        "cards": 135
+      }
+    ],
+    "checklists": 0,
+    "checklistItems": 0,
+    "customFields": [
+      {
+        "name": "Prioridade",
+        "type": "list",
+        "options": [
+          "Normal",
+          "Alta",
+          "Urgente"
+        ],
+        "values": {
+          "Alta": 49,
+          "Normal": 67,
+          "Urgente": 6
+        }
+      },
+      {
+        "name": "Tipo de Entrega",
+        "type": "list",
+        "options": [
+          "Post Estático",
+          "Carrossel",
+          "Reels / Vídeo Curto",
+          "Vídeo Longo",
+          "Story",
+          "Landing Page",
+          "Website",
+          "Campanha Ads",
+          "Relatório",
+          "Material Gráfico",
+          "Outro",
+          "Carrossel + Stories",
+          "Post Estático + Story",
+          "Post animado"
+        ],
+        "values": {
+          "Post animado": 3,
+          "Material Gráfico": 10,
+          "Reels / Vídeo Curto": 24,
+          "Post Estático + Story": 49,
+          "Story": 8,
+          "Carrossel + Stories": 19,
+          "Post Estático": 1,
+          "Carrossel": 2,
+          "Vídeo Longo": 1,
+          "Outro": 8
+        }
+      },
+      {
+        "name": "Pasta do Drive",
+        "type": "text",
+        "options": [],
+        "values": {
+          "(preenchido)": 98
+        }
+      }
+    ],
+    "attachments": 69,
+    "attachmentBytes": 40481859,
+    "attachmentsOver25MB": 0,
+    "attachmentExtensions": {
+      ".png": 51,
+      ".jpeg": 9,
+      "": 2,
+      ".pdf": 2,
+      ".jpg": 5
+    },
+    "actions": 1000,
+    "actionTypes": {
+      "addAttachmentToCard": 36,
+      "deleteAttachmentFromCard": 8,
+      "updateCard": 720,
+      "commentCard": 8,
+      "updateCustomFieldItem": 78,
+      "createCard": 45,
+      "addMemberToCard": 105
+    },
+    "actionRange": {
+      "oldest": "2026-09-04T17:49:41.083Z",
+      "newest": "2026-10-21T17:51:49.091Z"
+    },
+    "exportedComments": 8,
+    "badgeComments": 19,
+    "actionsForAbsentCards": 0,
+    "priorityDistribution": {
+      "(vazio)": 43,
+      "HIGH": 49,
+      "MEDIUM": 67,
+      "URGENT": 6
+    },
+    "completionByList": [
+      {
+        "name": "CAPTACÃO | REUNIÃO",
+        "total": 2,
+        "dueComplete": 1
+      },
+      {
+        "name": "IDEIAS",
+        "total": 2,
+        "dueComplete": 0
+      },
+      {
+        "name": "CAIXA DE ENTRADA",
+        "total": 12,
+        "dueComplete": 2
+      },
+      {
+        "name": "EM PLANEJAMENTO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM PRODUÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "REVISÃO INTERNA",
+        "total": 4,
+        "dueComplete": 3
+      },
+      {
+        "name": "EM APROVAÇÃO",
+        "total": 1,
+        "dueComplete": 0
+      },
+      {
+        "name": "AJUSTES",
+        "total": 7,
+        "dueComplete": 7
+      },
+      {
+        "name": "APROVADO / AGENDAR",
+        "total": 2,
+        "dueComplete": 2
+      },
+      {
+        "name": "CONCLUÍDO",
+        "total": 135,
+        "dueComplete": 135
+      }
+    ],
+    "warnings": {
+      "Comentários incompletos no export": 11
+    }
+  },
+  {
+    "name": "Master Health",
+    "sourceId": "69c6c09d6908077e103bf0be",
+    "filename": "WSFVFzWy - master-health.json",
+    "sha256": "6747eb5f5b365c256d19c242cf0d930a721bad1d9626e9aa3dc32b143ba487e6",
+    "bytes": 2642253,
+    "cards": 135,
+    "archivedCards": 2,
+    "dueCompleteCards": 129,
+    "withDue": 132,
+    "withStart": 0,
+    "withDescription": 134,
+    "members": 8,
+    "labels": 7,
+    "lists": [
+      {
+        "id": "69c6c09d6908077e103bf0bd",
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c6c09d6908077e103bf0b6",
+        "name": "IDEIAS",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c6c09d6908077e103bf0b5",
+        "name": "CAIXA DE ENTRADA",
+        "closed": false,
+        "cards": 4
+      },
+      {
+        "id": "69c6c09d6908077e103bf0b7",
+        "name": "EM PRODUÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c09d6908077e103bf0b8",
+        "name": "REVISÃO INTERNA",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c09d6908077e103bf0b9",
+        "name": "EM APROVAÇÃO",
+        "closed": false,
+        "cards": 5
+      },
+      {
+        "id": "69c6c09d6908077e103bf0ba",
+        "name": "AJUSTES",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c09d6908077e103bf0bb",
+        "name": "APROVADO / AGENDAR",
+        "closed": false,
+        "cards": 3
+      },
+      {
+        "id": "69c6c09d6908077e103bf0bc",
+        "name": "CONCLUÍDO",
+        "closed": false,
+        "cards": 121
+      }
+    ],
+    "checklists": 1,
+    "checklistItems": 2,
+    "customFields": [
+      {
+        "name": "Prioridade",
+        "type": "list",
+        "options": [
+          "Normal",
+          "Alta",
+          "Urgente"
+        ],
+        "values": {
+          "Normal": 69,
+          "Alta": 39,
+          "Urgente": 6
+        }
+      },
+      {
+        "name": "Tipo de Entrega",
+        "type": "list",
+        "options": [
+          "Post Estático",
+          "Post estático + Story",
+          "Carrossel",
+          "Carrossel + Stories",
+          "Reels / Vídeo Curto",
+          "Vídeo Longo",
+          "Story",
+          "Landing Page",
+          "Website",
+          "Campanha Ads",
+          "Relatório",
+          "Material Gráfico",
+          "Outro"
+        ],
+        "values": {
+          "Reels / Vídeo Curto": 15,
+          "Carrossel + Stories": 29,
+          "Post estático + Story": 67,
+          "Story": 8,
+          "Carrossel": 1,
+          "Outro": 1
+        }
+      },
+      {
+        "name": "Pasta do Drive",
+        "type": "text",
+        "options": [],
+        "values": {
+          "(preenchido)": 111
+        }
+      }
+    ],
+    "attachments": 161,
+    "attachmentBytes": 169188521,
+    "attachmentsOver25MB": 0,
+    "attachmentExtensions": {
+      ".png": 149,
+      ".jpeg": 11,
+      ".pdf": 1
+    },
+    "actions": 1000,
+    "actionTypes": {
+      "updateCard": 692,
+      "updateCustomFieldItem": 97,
+      "addMemberToCard": 75,
+      "createCard": 34,
+      "addAttachmentToCard": 54,
+      "deleteAttachmentFromCard": 33,
+      "removeMemberFromCard": 1,
+      "addChecklistToCard": 1,
+      "mergeCards": 1,
+      "commentCard": 11,
+      "deleteCard": 1
+    },
+    "actionRange": {
+      "oldest": "2026-08-27T05:21:52.707Z",
+      "newest": "2026-10-20T20:27:16.542Z"
+    },
+    "exportedComments": 11,
+    "badgeComments": 26,
+    "actionsForAbsentCards": 1,
+    "priorityDistribution": {
+      "(vazio)": 21,
+      "MEDIUM": 69,
+      "HIGH": 39,
+      "URGENT": 6
+    },
+    "completionByList": [
+      {
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "total": 1,
+        "dueComplete": 0
+      },
+      {
+        "name": "IDEIAS",
+        "total": 1,
+        "dueComplete": 0
+      },
+      {
+        "name": "CAIXA DE ENTRADA",
+        "total": 4,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM PRODUÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "REVISÃO INTERNA",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM APROVAÇÃO",
+        "total": 5,
+        "dueComplete": 5
+      },
+      {
+        "name": "AJUSTES",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "APROVADO / AGENDAR",
+        "total": 3,
+        "dueComplete": 3
+      },
+      {
+        "name": "CONCLUÍDO",
+        "total": 121,
+        "dueComplete": 121
+      }
+    ],
+    "warnings": {
+      "Comentários incompletos no export": 13
+    }
+  },
+  {
+    "name": "Cafu Camp",
+    "sourceId": "69ce9064d3c6419d08dd88d6",
+    "filename": "a2JtuK6Y - cafu-camp.json",
+    "sha256": "200c6d6a05bc2a2acb3d2c1b7c62c6209f953486be1a432248aebf72f595a1b3",
+    "bytes": 445868,
+    "cards": 19,
+    "archivedCards": 0,
+    "dueCompleteCards": 8,
+    "withDue": 11,
+    "withStart": 0,
+    "withDescription": 13,
+    "members": 12,
+    "labels": 16,
+    "lists": [
+      {
+        "id": "69ce9064d3c6419d08dd88d5",
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69ce9064d3c6419d08dd88ce",
+        "name": "IDEIAS",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69ce9064d3c6419d08dd88cd",
+        "name": "CAIXA DE ENTRADA",
+        "closed": false,
+        "cards": 10
+      },
+      {
+        "id": "69ce9064d3c6419d08dd88cf",
+        "name": "EM PRODUÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69ce9064d3c6419d08dd88d0",
+        "name": "REVISÃO INTERNA",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69ce9064d3c6419d08dd88d1",
+        "name": "EM APROVAÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69ce9064d3c6419d08dd88d2",
+        "name": "AJUSTES",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69ce9064d3c6419d08dd88d3",
+        "name": "APROVADO / AGENDAR",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69ce9064d3c6419d08dd88d4",
+        "name": "CONCLUÍDO",
+        "closed": false,
+        "cards": 7
+      }
+    ],
+    "checklists": 0,
+    "checklistItems": 0,
+    "customFields": [
+      {
+        "name": "Prioridade",
+        "type": "list",
+        "options": [
+          "Normal",
+          "Alta",
+          "Urgente"
+        ],
+        "values": {
+          "Normal": 11,
+          "Urgente": 1
+        }
+      },
+      {
+        "name": "Tipo de Entrega",
+        "type": "list",
+        "options": [
+          "Post Estático",
+          "Carrossel",
+          "Reels / Vídeo Curto",
+          "Vídeo Longo",
+          "Story",
+          "Landing Page",
+          "Website",
+          "Campanha Ads",
+          "Relatório",
+          "Material Gráfico",
+          "Outro"
+        ],
+        "values": {
+          "Reels / Vídeo Curto": 4,
+          "Post Estático": 6,
+          "Carrossel": 1
+        }
+      },
+      {
+        "name": "Pasta do Drive",
+        "type": "text",
+        "options": [],
+        "values": {
+          "(preenchido)": 8
+        }
+      }
+    ],
+    "attachments": 13,
+    "attachmentBytes": 120440346,
+    "attachmentsOver25MB": 0,
+    "attachmentExtensions": {
+      ".jpg": 13
+    },
+    "actions": 240,
+    "actionTypes": {
+      "addMemberToBoard": 20,
+      "deactivatedMemberInBoard": 3,
+      "updateCard": 129,
+      "updateCustomFieldItem": 34,
+      "addAttachmentToCard": 13,
+      "addMemberToCard": 20,
+      "createCard": 17,
+      "enablePlugin": 2,
+      "addToOrganizationBoard": 1,
+      "copyBoard": 1
+    },
+    "actionRange": {
+      "oldest": "2026-04-02T15:51:00.948Z",
+      "newest": "2026-07-06T16:45:06.031Z"
+    },
+    "exportedComments": 0,
+    "badgeComments": 0,
+    "actionsForAbsentCards": 0,
+    "priorityDistribution": {
+      "(vazio)": 7,
+      "MEDIUM": 11,
+      "URGENT": 1
+    },
+    "completionByList": [
+      {
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "total": 1,
+        "dueComplete": 0
+      },
+      {
+        "name": "IDEIAS",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "CAIXA DE ENTRADA",
+        "total": 10,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM PRODUÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "REVISÃO INTERNA",
+        "total": 1,
+        "dueComplete": 1
+      },
+      {
+        "name": "EM APROVAÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "AJUSTES",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "APROVADO / AGENDAR",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "CONCLUÍDO",
+        "total": 7,
+        "dueComplete": 7
+      }
+    ],
+    "warnings": {}
+  },
+  {
+    "name": "Primordial cuidados",
+    "sourceId": "69c6c030d78c3436e5508923",
+    "filename": "eV9m8vZ9 - primordial-cuidados.json",
+    "sha256": "d93cec0ea20547867fe1eeffe50ae1d171aaa66b010d7204e98c9dff9308ba49",
+    "bytes": 2313159,
+    "cards": 104,
+    "archivedCards": 0,
+    "dueCompleteCards": 95,
+    "withDue": 93,
+    "withStart": 0,
+    "withDescription": 99,
+    "members": 9,
+    "labels": 7,
+    "lists": [
+      {
+        "id": "69c6c030d78c3436e5508922",
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "closed": false,
+        "cards": 2
+      },
+      {
+        "id": "6a187c3b062da056a4f97e0a",
+        "name": "Tráfego Pago",
+        "closed": false,
+        "cards": 2
+      },
+      {
+        "id": "69c6c030d78c3436e550891b",
+        "name": "IDEIAS",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c6c030d78c3436e550891a",
+        "name": "CAIXA DE ENTRADA",
+        "closed": false,
+        "cards": 4
+      },
+      {
+        "id": "69c6c030d78c3436e550891c",
+        "name": "EM PRODUÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c030d78c3436e550891d",
+        "name": "REVISÃO INTERNA",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c030d78c3436e550891e",
+        "name": "EM APROVAÇÃO",
+        "closed": false,
+        "cards": 3
+      },
+      {
+        "id": "69c6c030d78c3436e550891f",
+        "name": "AJUSTES",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c030d78c3436e5508920",
+        "name": "APROVADO / AGENDAR",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c6c030d78c3436e5508921",
+        "name": "CONCLUÍDO",
+        "closed": false,
+        "cards": 91
+      }
+    ],
+    "checklists": 0,
+    "checklistItems": 0,
+    "customFields": [
+      {
+        "name": "Prioridade",
+        "type": "list",
+        "options": [
+          "Normal",
+          "Alta",
+          "Urgente"
+        ],
+        "values": {
+          "Normal": 71,
+          "Alta": 18,
+          "Urgente": 2
+        }
+      },
+      {
+        "name": "Tipo de Entrega",
+        "type": "list",
+        "options": [
+          "Post Estático",
+          "Post estático + Story",
+          "Carrossel",
+          "Carrossel + Story",
+          "Reels / Vídeo Curto",
+          "Vídeo Longo",
+          "Story",
+          "Landing Page",
+          "Website",
+          "Campanha Ads",
+          "Relatório",
+          "Material Gráfico",
+          "Outro",
+          "Post animado (Feed e Story)"
+        ],
+        "values": {
+          "Post estático + Story": 43,
+          "Reels / Vídeo Curto": 22,
+          "Carrossel + Story": 13,
+          "Material Gráfico": 3,
+          "Outro": 3,
+          "Post animado (Feed e Story)": 6
+        }
+      },
+      {
+        "name": "Pasta do Drive",
+        "type": "text",
+        "options": [],
+        "values": {
+          "(preenchido)": 82
+        }
+      }
+    ],
+    "attachments": 74,
+    "attachmentBytes": 130626454,
+    "attachmentsOver25MB": 0,
+    "attachmentExtensions": {
+      ".pdf": 7,
+      ".png": 36,
+      ".zip": 1,
+      ".docx": 1,
+      ".jpeg": 9,
+      ".rar": 1,
+      ".jpg": 10,
+      ".gif": 7,
+      ".mp4": 2
+    },
+    "actions": 1000,
+    "actionTypes": {
+      "updateCard": 691,
+      "createCard": 40,
+      "updateCustomFieldItem": 121,
+      "addMemberToCard": 81,
+      "removeMemberFromCard": 21,
+      "addAttachmentToCard": 30,
+      "deleteAttachmentFromCard": 4,
+      "commentCard": 5,
+      "addMemberToBoard": 1,
+      "moveCardFromBoard": 6
+    },
+    "actionRange": {
+      "oldest": "2026-07-02T15:43:32.164Z",
+      "newest": "2026-10-21T19:09:03.769Z"
+    },
+    "exportedComments": 5,
+    "badgeComments": 7,
+    "actionsForAbsentCards": 21,
+    "priorityDistribution": {
+      "(vazio)": 13,
+      "MEDIUM": 71,
+      "HIGH": 18,
+      "URGENT": 2
+    },
+    "completionByList": [
+      {
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "total": 2,
+        "dueComplete": 0
+      },
+      {
+        "name": "Tráfego Pago",
+        "total": 2,
+        "dueComplete": 0
+      },
+      {
+        "name": "IDEIAS",
+        "total": 1,
+        "dueComplete": 0
+      },
+      {
+        "name": "CAIXA DE ENTRADA",
+        "total": 4,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM PRODUÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "REVISÃO INTERNA",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM APROVAÇÃO",
+        "total": 3,
+        "dueComplete": 3
+      },
+      {
+        "name": "AJUSTES",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "APROVADO / AGENDAR",
+        "total": 1,
+        "dueComplete": 1
+      },
+      {
+        "name": "CONCLUÍDO",
+        "total": 91,
+        "dueComplete": 91
+      }
+    ],
+    "warnings": {
+      "Comentários incompletos no export": 2
+    }
+  },
+  {
+    "name": "CEVISA",
+    "sourceId": "69c2a65991435669977b3f3f",
+    "filename": "g5vG08EU - cevisa.json",
+    "sha256": "427fbf2cbffe2cdc8c9217ac39e932f8f6d3023eccc424d670447c2df1bd2198",
+    "bytes": 2719338,
+    "cards": 161,
+    "archivedCards": 3,
+    "dueCompleteCards": 149,
+    "withDue": 152,
+    "withStart": 1,
+    "withDescription": 157,
+    "members": 9,
+    "labels": 8,
+    "lists": [
+      {
+        "id": "69c696b901f99a103570764c",
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "closed": false,
+        "cards": 2
+      },
+      {
+        "id": "6a187e9ad2e9dfd69db88fe1",
+        "name": "Tráfego Pago",
+        "closed": false,
+        "cards": 3
+      },
+      {
+        "id": "69c2a65991435669977b3f37",
+        "name": "IDEIAS",
+        "closed": false,
+        "cards": 2
+      },
+      {
+        "id": "69c2a65991435669977b3f36",
+        "name": "CAIXA DE ENTRADA",
+        "closed": false,
+        "cards": 8
+      },
+      {
+        "id": "69c2a65991435669977b3f38",
+        "name": "EM PLANEJAMENTO",
+        "closed": true,
+        "cards": 0
+      },
+      {
+        "id": "69c2a65991435669977b3f39",
+        "name": "EM PRODUÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c2a65991435669977b3f3a",
+        "name": "REVISÃO INTERNA",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c2a65991435669977b3f3b",
+        "name": "EM APROVAÇÃO",
+        "closed": false,
+        "cards": 2
+      },
+      {
+        "id": "69c2a65991435669977b3f3c",
+        "name": "AJUSTES",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c2a65991435669977b3f3d",
+        "name": "APROVADO / AGENDAR",
+        "closed": false,
+        "cards": 7
+      },
+      {
+        "id": "69c2a65991435669977b3f3e",
+        "name": "CONCLUÍDO",
+        "closed": false,
+        "cards": 137
+      }
+    ],
+    "checklists": 0,
+    "checklistItems": 0,
+    "customFields": [
+      {
+        "name": "Prioridade",
+        "type": "list",
+        "options": [
+          "Normal",
+          "Alta",
+          "Urgente"
+        ],
+        "values": {
+          "Normal": 64,
+          "Alta": 47,
+          "Urgente": 6
+        }
+      },
+      {
+        "name": "Tipo de Entrega",
+        "type": "list",
+        "options": [
+          "Post Estático",
+          "Carrossel",
+          "Reels / Vídeo Curto",
+          "Vídeo Longo",
+          "Story",
+          "Landing Page",
+          "Website",
+          "Campanha Ads",
+          "Relatório",
+          "Material Gráfico",
+          "Outro",
+          "Post Estático + Story",
+          "Carrossel + Stories"
+        ],
+        "values": {
+          "Carrossel + Stories": 18,
+          "Post Estático + Story": 48,
+          "Outro": 5,
+          "Reels / Vídeo Curto": 40,
+          "Carrossel": 1,
+          "Material Gráfico": 1,
+          "Story": 3,
+          "Vídeo Longo": 1
+        }
+      },
+      {
+        "name": "Pasta do Drive",
+        "type": "text",
+        "options": [],
+        "values": {
+          "(preenchido)": 86
+        }
+      }
+    ],
+    "attachments": 131,
+    "attachmentBytes": 424434160,
+    "attachmentsOver25MB": 1,
+    "attachmentExtensions": {
+      ".pdf": 17,
+      ".jpeg": 12,
+      ".png": 82,
+      ".jpg": 20
+    },
+    "actions": 1000,
+    "actionTypes": {
+      "updateCard": 774,
+      "addMemberToCard": 85,
+      "updateCustomFieldItem": 86,
+      "addAttachmentToCard": 9,
+      "createCard": 35,
+      "commentCard": 8,
+      "deleteCard": 3
+    },
+    "actionRange": {
+      "oldest": "2026-08-13T17:25:29.954Z",
+      "newest": "2026-10-21T18:55:51.939Z"
+    },
+    "exportedComments": 8,
+    "badgeComments": 33,
+    "actionsForAbsentCards": 3,
+    "priorityDistribution": {
+      "(vazio)": 44,
+      "MEDIUM": 64,
+      "HIGH": 47,
+      "URGENT": 6
+    },
+    "completionByList": [
+      {
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "total": 2,
+        "dueComplete": 0
+      },
+      {
+        "name": "Tráfego Pago",
+        "total": 3,
+        "dueComplete": 0
+      },
+      {
+        "name": "IDEIAS",
+        "total": 2,
+        "dueComplete": 1
+      },
+      {
+        "name": "CAIXA DE ENTRADA",
+        "total": 8,
+        "dueComplete": 2
+      },
+      {
+        "name": "EM PLANEJAMENTO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM PRODUÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "REVISÃO INTERNA",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM APROVAÇÃO",
+        "total": 2,
+        "dueComplete": 2
+      },
+      {
+        "name": "AJUSTES",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "APROVADO / AGENDAR",
+        "total": 7,
+        "dueComplete": 7
+      },
+      {
+        "name": "CONCLUÍDO",
+        "total": 137,
+        "dueComplete": 137
+      }
+    ],
+    "warnings": {
+      "Comentários incompletos no export": 19
+    }
+  },
+  {
+    "name": "Rivellino",
+    "sourceId": "69c6c15f80cc0135c782465f",
+    "filename": "hB851IXz - rivellino.json",
+    "sha256": "ff48ba50a2418ee15df2d92eae4c49de9d0d8881a85c03e2061125fc80ba34ad",
+    "bytes": 2659345,
+    "cards": 224,
+    "archivedCards": 106,
+    "dueCompleteCards": 160,
+    "withDue": 165,
+    "withStart": 2,
+    "withDescription": 196,
+    "members": 10,
+    "labels": 15,
+    "lists": [
+      {
+        "id": "69c6c15f80cc0135c782465e",
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "closed": false,
+        "cards": 2
+      },
+      {
+        "id": "69c6c15f80cc0135c7824657",
+        "name": "JOBS",
+        "closed": false,
+        "cards": 8
+      },
+      {
+        "id": "691c842b512098b1373af08f",
+        "name": "RIVELLINO | JOBS",
+        "closed": true,
+        "cards": 16
+      },
+      {
+        "id": "69272c63805a63ea097fd6a4",
+        "name": "RIVELLINO | POSTS",
+        "closed": true,
+        "cards": 53
+      },
+      {
+        "id": "6a187fc4cab795b658a9ebd4",
+        "name": "Tráfego Pago",
+        "closed": false,
+        "cards": 14
+      },
+      {
+        "id": "692ce6cb1ac7491f58c6dafd",
+        "name": "RIVELLINO",
+        "closed": true,
+        "cards": 6
+      },
+      {
+        "id": "69c6c15f80cc0135c7824656",
+        "name": "CAIXA DE ENTRADA",
+        "closed": false,
+        "cards": 34
+      },
+      {
+        "id": "69c6c15f80cc0135c7824658",
+        "name": "EM PRODUÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c15f80cc0135c7824659",
+        "name": "REVISÃO INTERNA",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c15f80cc0135c782465a",
+        "name": "EM APROVAÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c15f80cc0135c782465b",
+        "name": "AJUSTES",
+        "closed": false,
+        "cards": 4
+      },
+      {
+        "id": "69c6c15f80cc0135c782465c",
+        "name": "APROVADO / AGENDAR",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c6c15f80cc0135c782465d",
+        "name": "CONCLUÍDO",
+        "closed": false,
+        "cards": 86
+      },
+      {
+        "id": "6a597d286aaa13e40085b5f1",
+        "name": "AUDIOVISUAL",
+        "closed": false,
+        "cards": 0
+      }
+    ],
+    "checklists": 2,
+    "checklistItems": 18,
+    "customFields": [
+      {
+        "name": "Prioridade",
+        "type": "list",
+        "options": [
+          "Normal",
+          "Alta",
+          "Urgente"
+        ],
+        "values": {
+          "Normal": 61,
+          "Alta": 11,
+          "Urgente": 6
+        }
+      },
+      {
+        "name": "Tipo de Entrega",
+        "type": "list",
+        "options": [
+          "Post Estático",
+          "Carrossel",
+          "Reels / Vídeo Curto",
+          "Vídeo Longo",
+          "Story",
+          "Landing Page",
+          "Website",
+          "Campanha Ads",
+          "Relatório",
+          "Material Gráfico",
+          "Outro"
+        ],
+        "values": {
+          "Campanha Ads": 15,
+          "Landing Page": 1,
+          "Carrossel": 12,
+          "Reels / Vídeo Curto": 25,
+          "Outro": 4,
+          "Post Estático": 32,
+          "Material Gráfico": 1,
+          "Story": 2,
+          "Vídeo Longo": 1
+        }
+      },
+      {
+        "name": "Pasta do Drive",
+        "type": "text",
+        "options": [],
+        "values": {
+          "(preenchido)": 58
+        }
+      }
+    ],
+    "attachments": 308,
+    "attachmentBytes": 1031620787,
+    "attachmentsOver25MB": 8,
+    "attachmentExtensions": {
+      ".jpeg": 44,
+      ".png": 167,
+      "": 4,
+      ".pdf": 15,
+      ".jpg": 45,
+      ".dng": 6,
+      ".ai": 1,
+      ".docx": 2,
+      ".svg": 6,
+      ".webp": 3,
+      ".mp4": 14,
+      ".m4a": 1
+    },
+    "actions": 1000,
+    "actionTypes": {
+      "updateCard": 603,
+      "createCard": 59,
+      "updateCustomFieldItem": 120,
+      "addMemberToCard": 112,
+      "addAttachmentToCard": 70,
+      "removeMemberFromCard": 3,
+      "updateList": 2,
+      "deleteAttachmentFromCard": 4,
+      "commentCard": 25,
+      "createList": 1,
+      "copyCard": 1
+    },
+    "actionRange": {
+      "oldest": "2026-07-03T18:40:29.933Z",
+      "newest": "2026-10-21T17:55:03.183Z"
+    },
+    "exportedComments": 25,
+    "badgeComments": 40,
+    "actionsForAbsentCards": 0,
+    "priorityDistribution": {
+      "(vazio)": 146,
+      "MEDIUM": 61,
+      "HIGH": 11,
+      "URGENT": 6
+    },
+    "completionByList": [
+      {
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "total": 2,
+        "dueComplete": 1
+      },
+      {
+        "name": "JOBS",
+        "total": 8,
+        "dueComplete": 0
+      },
+      {
+        "name": "RIVELLINO | JOBS",
+        "total": 16,
+        "dueComplete": 15
+      },
+      {
+        "name": "RIVELLINO | POSTS",
+        "total": 53,
+        "dueComplete": 40
+      },
+      {
+        "name": "Tráfego Pago",
+        "total": 14,
+        "dueComplete": 11
+      },
+      {
+        "name": "RIVELLINO",
+        "total": 6,
+        "dueComplete": 4
+      },
+      {
+        "name": "CAIXA DE ENTRADA",
+        "total": 34,
+        "dueComplete": 3
+      },
+      {
+        "name": "EM PRODUÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "REVISÃO INTERNA",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM APROVAÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "AJUSTES",
+        "total": 4,
+        "dueComplete": 4
+      },
+      {
+        "name": "APROVADO / AGENDAR",
+        "total": 1,
+        "dueComplete": 1
+      },
+      {
+        "name": "CONCLUÍDO",
+        "total": 86,
+        "dueComplete": 81
+      },
+      {
+        "name": "AUDIOVISUAL",
+        "total": 0,
+        "dueComplete": 0
+      }
+    ],
+    "warnings": {
+      "Comentários incompletos no export": 12
+    }
+  },
+  {
+    "name": "SPMAR",
+    "sourceId": "69c6c052fd24c610bedb958a",
+    "filename": "iT8sXgPj - spmar.json",
+    "sha256": "0e56593a331bd9b6957e05af6abd684c2c47a735736a730380ef286f4d5771e8",
+    "bytes": 2241678,
+    "cards": 133,
+    "archivedCards": 11,
+    "dueCompleteCards": 114,
+    "withDue": 102,
+    "withStart": 1,
+    "withDescription": 121,
+    "members": 9,
+    "labels": 7,
+    "lists": [
+      {
+        "id": "69c6c052fd24c610bedb9588",
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "closed": false,
+        "cards": 2
+      },
+      {
+        "id": "69c6c052fd24c610bedb9581",
+        "name": "JOBS",
+        "closed": false,
+        "cards": 3
+      },
+      {
+        "id": "69c6c052fd24c610bedb9580",
+        "name": "PLANEJAMENTO",
+        "closed": false,
+        "cards": 12
+      },
+      {
+        "id": "69c6c052fd24c610bedb9582",
+        "name": "EM PRODUÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c052fd24c610bedb9583",
+        "name": "REVISÃO INTERNA",
+        "closed": false,
+        "cards": 6
+      },
+      {
+        "id": "69c6c052fd24c610bedb9584",
+        "name": "EM APROVAÇÃO",
+        "closed": false,
+        "cards": 3
+      },
+      {
+        "id": "69c6c052fd24c610bedb9585",
+        "name": "AJUSTES",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c6c052fd24c610bedb9586",
+        "name": "APROVADO / AGENDAR",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c052fd24c610bedb9587",
+        "name": "CONCLUÍDO",
+        "closed": false,
+        "cards": 106
+      }
+    ],
+    "checklists": 1,
+    "checklistItems": 4,
+    "customFields": [
+      {
+        "name": "Prioridade",
+        "type": "list",
+        "options": [
+          "Normal",
+          "Alta",
+          "Urgente"
+        ],
+        "values": {
+          "Normal": 5,
+          "Alta": 9
+        }
+      },
+      {
+        "name": "Tipo de Entrega",
+        "type": "list",
+        "options": [
+          "Post Estático",
+          "Carrossel",
+          "Reels / Vídeo Curto",
+          "Vídeo Longo",
+          "Story",
+          "Landing Page",
+          "Website",
+          "Campanha Ads",
+          "Relatório",
+          "Material Gráfico",
+          "Outro"
+        ],
+        "values": {
+          "Material Gráfico": 8,
+          "Post Estático": 5,
+          "Reels / Vídeo Curto": 2,
+          "Vídeo Longo": 4,
+          "Carrossel": 2
+        }
+      },
+      {
+        "name": "Pasta do Drive",
+        "type": "text",
+        "options": [],
+        "values": {
+          "(preenchido)": 69
+        }
+      }
+    ],
+    "attachments": 143,
+    "attachmentBytes": 497403153,
+    "attachmentsOver25MB": 1,
+    "attachmentExtensions": {
+      ".jpeg": 52,
+      ".png": 31,
+      ".pdf": 14,
+      ".jpg": 40,
+      ".m4a": 1,
+      ".xlsx": 2,
+      ".pptx": 1,
+      ".cr2": 2
+    },
+    "actions": 1000,
+    "actionTypes": {
+      "updateCard": 654,
+      "addMemberToCard": 99,
+      "addAttachmentToCard": 98,
+      "updateCustomFieldItem": 70,
+      "createCard": 62,
+      "commentCard": 7,
+      "addChecklistToCard": 1,
+      "deleteAttachmentFromCard": 5,
+      "mergeCards": 1,
+      "removeMemberFromCard": 2,
+      "deactivatedMemberInBoard": 1
+    },
+    "actionRange": {
+      "oldest": "2026-06-09T12:21:09.928Z",
+      "newest": "2026-10-21T16:41:00.112Z"
+    },
+    "exportedComments": 7,
+    "badgeComments": 10,
+    "actionsForAbsentCards": 0,
+    "priorityDistribution": {
+      "(vazio)": 119,
+      "MEDIUM": 5,
+      "HIGH": 9
+    },
+    "completionByList": [
+      {
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "total": 2,
+        "dueComplete": 1
+      },
+      {
+        "name": "JOBS",
+        "total": 3,
+        "dueComplete": 0
+      },
+      {
+        "name": "PLANEJAMENTO",
+        "total": 12,
+        "dueComplete": 1
+      },
+      {
+        "name": "EM PRODUÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "REVISÃO INTERNA",
+        "total": 6,
+        "dueComplete": 4
+      },
+      {
+        "name": "EM APROVAÇÃO",
+        "total": 3,
+        "dueComplete": 2
+      },
+      {
+        "name": "AJUSTES",
+        "total": 1,
+        "dueComplete": 1
+      },
+      {
+        "name": "APROVADO / AGENDAR",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "CONCLUÍDO",
+        "total": 106,
+        "dueComplete": 105
+      }
+    ],
+    "warnings": {
+      "Comentários incompletos no export": 3
+    }
+  },
+  {
+    "name": "TGA Group",
+    "sourceId": "69c9bbbfa25c014331185e7e",
+    "filename": "jRyXpW4P - tga-group.json",
+    "sha256": "16a554725d468f246f7b3873f23e18b51441ad45b666b6bff0253225a698e146",
+    "bytes": 2966421,
+    "cards": 218,
+    "archivedCards": 17,
+    "dueCompleteCards": 188,
+    "withDue": 147,
+    "withStart": 0,
+    "withDescription": 212,
+    "members": 9,
+    "labels": 7,
+    "lists": [
+      {
+        "id": "69c9bbbfa25c014331185e7d",
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "closed": false,
+        "cards": 4
+      },
+      {
+        "id": "69c9bbbfa25c014331185e76",
+        "name": "JOBS",
+        "closed": false,
+        "cards": 3
+      },
+      {
+        "id": "6a187f72eb949520ab6ff112",
+        "name": "Tráfego Pago",
+        "closed": false,
+        "cards": 7
+      },
+      {
+        "id": "69c9bbbfa25c014331185e75",
+        "name": "CAIXA DE ENTRADA",
+        "closed": false,
+        "cards": 20
+      },
+      {
+        "id": "69c9bbbfa25c014331185e77",
+        "name": "EM PRODUÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c9bbbfa25c014331185e78",
+        "name": "REVISÃO INTERNA",
+        "closed": false,
+        "cards": 4
+      },
+      {
+        "id": "69c9bbbfa25c014331185e79",
+        "name": "EM APROVAÇÃO",
+        "closed": false,
+        "cards": 2
+      },
+      {
+        "id": "69c9bbbfa25c014331185e7a",
+        "name": "AJUSTES",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c9bbbfa25c014331185e7b",
+        "name": "APROVADO / AGENDAR",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c9bbbfa25c014331185e7c",
+        "name": "CONCLUÍDO",
+        "closed": false,
+        "cards": 178
+      }
+    ],
+    "checklists": 1,
+    "checklistItems": 2,
+    "customFields": [
+      {
+        "name": "Prioridade",
+        "type": "list",
+        "options": [
+          "Normal",
+          "Alta",
+          "Urgente"
+        ],
+        "values": {
+          "Normal": 152,
+          "Urgente": 5,
+          "Alta": 25
+        }
+      },
+      {
+        "name": "Tipo de Entrega",
+        "type": "list",
+        "options": [
+          "Post Estático",
+          "Carrossel",
+          "Reels / Vídeo Curto",
+          "Vídeo Longo",
+          "Story",
+          "Landing Page",
+          "Website",
+          "Campanha Ads",
+          "Relatório",
+          "Material Gráfico",
+          "Outro"
+        ],
+        "values": {
+          "Outro": 39,
+          "Material Gráfico": 2,
+          "Landing Page": 6,
+          "Reels / Vídeo Curto": 49,
+          "Website": 1,
+          "Carrossel": 57,
+          "Post Estático": 22
+        }
+      },
+      {
+        "name": "Pasta do Drive",
+        "type": "text",
+        "options": [],
+        "values": {
+          "(preenchido)": 123
+        }
+      }
+    ],
+    "attachments": 254,
+    "attachmentBytes": 691068021,
+    "attachmentsOver25MB": 2,
+    "attachmentExtensions": {
+      ".pdf": 31,
+      ".jpeg": 28,
+      "": 4,
+      ".docx": 8,
+      ".png": 154,
+      ".zip": 1,
+      ".avif": 1,
+      ".jpg": 3,
+      ".mp4": 23,
+      ".mov": 1
+    },
+    "actions": 1000,
+    "actionTypes": {
+      "updateCard": 664,
+      "addMemberToCard": 67,
+      "updateCustomFieldItem": 110,
+      "createCard": 37,
+      "addAttachmentToCard": 86,
+      "removeMemberFromCard": 12,
+      "moveCardFromBoard": 1,
+      "commentCard": 21,
+      "deleteAttachmentFromCard": 2
+    },
+    "actionRange": {
+      "oldest": "2026-08-18T17:50:38.320Z",
+      "newest": "2026-10-21T20:28:12.156Z"
+    },
+    "exportedComments": 21,
+    "badgeComments": 41,
+    "actionsForAbsentCards": 10,
+    "priorityDistribution": {
+      "(vazio)": 36,
+      "MEDIUM": 152,
+      "URGENT": 5,
+      "HIGH": 25
+    },
+    "completionByList": [
+      {
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "total": 4,
+        "dueComplete": 1
+      },
+      {
+        "name": "JOBS",
+        "total": 3,
+        "dueComplete": 0
+      },
+      {
+        "name": "Tráfego Pago",
+        "total": 7,
+        "dueComplete": 5
+      },
+      {
+        "name": "CAIXA DE ENTRADA",
+        "total": 20,
+        "dueComplete": 3
+      },
+      {
+        "name": "EM PRODUÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "REVISÃO INTERNA",
+        "total": 4,
+        "dueComplete": 2
+      },
+      {
+        "name": "EM APROVAÇÃO",
+        "total": 2,
+        "dueComplete": 2
+      },
+      {
+        "name": "AJUSTES",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "APROVADO / AGENDAR",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "CONCLUÍDO",
+        "total": 178,
+        "dueComplete": 175
+      }
+    ],
+    "warnings": {
+      "Comentários incompletos no export": 11
+    }
+  },
+  {
+    "name": "Deputada Leci Brandão",
+    "sourceId": "69c6c043e1499cc2979581ee",
+    "filename": "tWwhLTcK - deputada-leci-brandao.json",
+    "sha256": "3ecba56a08af860ee194103863fc8cfbda7c7b6cb32e32e226582e5eeff64b1c",
+    "bytes": 2225251,
+    "cards": 375,
+    "archivedCards": 222,
+    "dueCompleteCards": 78,
+    "withDue": 350,
+    "withStart": 0,
+    "withDescription": 251,
+    "members": 10,
+    "labels": 7,
+    "lists": [
+      {
+        "id": "69c6c043e1499cc2979581ed",
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "closed": false,
+        "cards": 4
+      },
+      {
+        "id": "69c6c043e1499cc2979581e5",
+        "name": "PLANEJAMENTO",
+        "closed": false,
+        "cards": 295
+      },
+      {
+        "id": "69c6c043e1499cc2979581e6",
+        "name": "JOBS",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c6c043e1499cc2979581e7",
+        "name": "EM PRODUÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c043e1499cc2979581e8",
+        "name": "REVISÃO INTERNA",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c6c043e1499cc2979581e9",
+        "name": "EM APROVAÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c043e1499cc2979581ea",
+        "name": "AJUSTES",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c043e1499cc2979581eb",
+        "name": "APROVADO / AGENDAR",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c043e1499cc2979581ec",
+        "name": "CONCLUÍDO",
+        "closed": false,
+        "cards": 74
+      }
+    ],
+    "checklists": 0,
+    "checklistItems": 0,
+    "customFields": [
+      {
+        "name": "Prioridade",
+        "type": "list",
+        "options": [
+          "Normal",
+          "Alta",
+          "Urgente"
+        ],
+        "values": {
+          "Normal": 26
+        }
+      },
+      {
+        "name": "Tipo de Entrega",
+        "type": "list",
+        "options": [
+          "Post Estático",
+          "Carrossel",
+          "Reels / Vídeo Curto",
+          "Vídeo Longo",
+          "Story",
+          "Landing Page",
+          "Website",
+          "Campanha Ads",
+          "Relatório",
+          "Material Gráfico",
+          "Outro"
+        ],
+        "values": {
+          "Post Estático": 15,
+          "Carrossel": 5,
+          "Reels / Vídeo Curto": 1,
+          "Website": 1,
+          "Material Gráfico": 1
+        }
+      },
+      {
+        "name": "Pasta do Drive",
+        "type": "text",
+        "options": [],
+        "values": {
+          "(preenchido)": 13
+        }
+      }
+    ],
+    "attachments": 63,
+    "attachmentBytes": 53134687,
+    "attachmentsOver25MB": 0,
+    "attachmentExtensions": {
+      "": 2,
+      ".jpeg": 39,
+      ".png": 18,
+      ".zip": 1,
+      ".avif": 3
+    },
+    "actions": 1000,
+    "actionTypes": {
+      "updateCard": 747,
+      "createCard": 162,
+      "addMemberToCard": 19,
+      "updateCustomFieldItem": 45,
+      "addAttachmentToCard": 27
+    },
+    "actionRange": {
+      "oldest": "2026-06-30T12:59:05.436Z",
+      "newest": "2026-10-20T18:54:26.970Z"
+    },
+    "exportedComments": 0,
+    "badgeComments": 3,
+    "actionsForAbsentCards": 0,
+    "priorityDistribution": {
+      "(vazio)": 349,
+      "MEDIUM": 26
+    },
+    "completionByList": [
+      {
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "total": 4,
+        "dueComplete": 3
+      },
+      {
+        "name": "PLANEJAMENTO",
+        "total": 295,
+        "dueComplete": 1
+      },
+      {
+        "name": "JOBS",
+        "total": 1,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM PRODUÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "REVISÃO INTERNA",
+        "total": 1,
+        "dueComplete": 1
+      },
+      {
+        "name": "EM APROVAÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "AJUSTES",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "APROVADO / AGENDAR",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "CONCLUÍDO",
+        "total": 74,
+        "dueComplete": 73
+      }
+    ],
+    "warnings": {
+      "Comentários incompletos no export": 2,
+      "Concluído sem data de conclusão": 2
+    }
+  },
+  {
+    "name": "Magik",
+    "sourceId": "69c6c181df2f45ff5c4cf8d3",
+    "filename": "te5dtnqv - magik.json",
+    "sha256": "0440319883594f67fc4780af641272078880d76ac23713809d3b2c4627433468",
+    "bytes": 106431,
+    "cards": 10,
+    "archivedCards": 0,
+    "dueCompleteCards": 0,
+    "withDue": 0,
+    "withStart": 0,
+    "withDescription": 3,
+    "members": 3,
+    "labels": 7,
+    "lists": [
+      {
+        "id": "69c6c181df2f45ff5c4cf8d2",
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c6c181df2f45ff5c4cf8cb",
+        "name": "IDEIAS",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c181df2f45ff5c4cf8ca",
+        "name": "CAIXA DE ENTRADA",
+        "closed": false,
+        "cards": 1
+      },
+      {
+        "id": "69c6c181df2f45ff5c4cf8cc",
+        "name": "EM PRODUÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c181df2f45ff5c4cf8cd",
+        "name": "REVISÃO INTERNA",
+        "closed": false,
+        "cards": 8
+      },
+      {
+        "id": "69c6c181df2f45ff5c4cf8ce",
+        "name": "EM APROVAÇÃO",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c181df2f45ff5c4cf8cf",
+        "name": "AJUSTES",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c181df2f45ff5c4cf8d0",
+        "name": "APROVADO / AGENDAR",
+        "closed": false,
+        "cards": 0
+      },
+      {
+        "id": "69c6c181df2f45ff5c4cf8d1",
+        "name": "CONCLUÍDO",
+        "closed": false,
+        "cards": 0
+      }
+    ],
+    "checklists": 0,
+    "checklistItems": 0,
+    "customFields": [
+      {
+        "name": "Prioridade",
+        "type": "list",
+        "options": [
+          "Normal",
+          "Alta",
+          "Urgente"
+        ],
+        "values": {
+          "Normal": 1
+        }
+      },
+      {
+        "name": "Tipo de Entrega",
+        "type": "list",
+        "options": [
+          "Post Estático",
+          "Carrossel",
+          "Reels / Vídeo Curto",
+          "Vídeo Longo",
+          "Story",
+          "Landing Page",
+          "Website",
+          "Campanha Ads",
+          "Relatório",
+          "Material Gráfico",
+          "Outro"
+        ],
+        "values": {}
+      },
+      {
+        "name": "Pasta do Drive",
+        "type": "text",
+        "options": [],
+        "values": {}
+      }
+    ],
+    "attachments": 0,
+    "attachmentBytes": 0,
+    "attachmentsOver25MB": 0,
+    "attachmentExtensions": {},
+    "actions": 58,
+    "actionTypes": {
+      "updateCard": 27,
+      "addMemberToCard": 16,
+      "addMemberToBoard": 2,
+      "createCard": 8,
+      "updateBoard": 1,
+      "enablePlugin": 2,
+      "addToOrganizationBoard": 1,
+      "copyBoard": 1
+    },
+    "actionRange": {
+      "oldest": "2026-03-27T17:42:25.508Z",
+      "newest": "2026-04-28T20:42:39.837Z"
+    },
+    "exportedComments": 0,
+    "badgeComments": 0,
+    "actionsForAbsentCards": 0,
+    "priorityDistribution": {
+      "(vazio)": 9,
+      "MEDIUM": 1
+    },
+    "completionByList": [
+      {
+        "name": "CAPTAÇÃO | REUNIÃO",
+        "total": 1,
+        "dueComplete": 0
+      },
+      {
+        "name": "IDEIAS",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "CAIXA DE ENTRADA",
+        "total": 1,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM PRODUÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "REVISÃO INTERNA",
+        "total": 8,
+        "dueComplete": 0
+      },
+      {
+        "name": "EM APROVAÇÃO",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "AJUSTES",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "APROVADO / AGENDAR",
+        "total": 0,
+        "dueComplete": 0
+      },
+      {
+        "name": "CONCLUÍDO",
+        "total": 0,
+        "dueComplete": 0
+      }
+    ],
+    "warnings": {}
+  }
+]

@@ -98,6 +98,7 @@ model Column {
   isDone    Boolean  @default(false)
   /// Limite de demandas em andamento (0 = sem limite). Só avisa, não bloqueia.
   wipLimit  Int      @default(0)
+  archivedAt DateTime?
   createdAt DateTime @default(now())
 
   board   Board  @relation(fields: [boardId], references: [id], onDelete: Cascade)
@@ -112,6 +113,7 @@ model Card {
   /// Número sequencial curto (#123) para citar a demanda em conversa.
   number            Int         @unique
   title             String
+  isTemplate        Boolean     @default(false)
   description       String?
   priority          String? // LOW | MEDIUM | HIGH | URGENT
   startDate         DateTime?
@@ -213,10 +215,38 @@ model Comment {
   editedAt  DateTime?
   cardId    String
   card      Card      @relation(fields: [cardId], references: [id], onDelete: Cascade)
-  userId    String
-  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String?
+  user      User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+  externalAuthorId String?
+  externalAuthorName String?
 
   @@index([cardId, createdAt])
+}
+
+/// Snapshot e decisões imutáveis de uma importação. Nunca contém credenciais.
+model ImportBatch {
+  id String @id
+  source String
+  sourceHash String
+  plan Json
+  status String @default("RUNNING")
+  startedAt DateTime @default(now())
+  finishedAt DateTime?
+  entities ImportedEntity[]
+}
+
+/// IDs externos e conteúdo original, inclusive dados sem equivalente no Dmanda.
+model ImportedEntity {
+  id String @id @default(cuid())
+  batchId String
+  batch ImportBatch @relation(fields: [batchId], references: [id], onDelete: Restrict)
+  kind String
+  externalId String
+  targetId String?
+  status String
+  original Json
+  @@unique([batchId, kind, externalId])
+  @@index([targetId, kind])
 }
 
 model Attachment {

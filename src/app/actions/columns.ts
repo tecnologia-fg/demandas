@@ -40,9 +40,9 @@ export async function reorderColumns(boardId: string, ids: string[]) {
   return run(async () => {
     await assertUser();
     const list = z.array(id).max(100).parse(ids);
-    const cols = await db.column.findMany({ where: { boardId: id.parse(boardId) }, select: { id: true } });
+    const cols = await db.column.findMany({ where: { boardId: id.parse(boardId), archivedAt: null }, select: { id: true } });
     const valid = new Set(cols.map((c) => c.id));
-    if (list.some((c) => !valid.has(c)) || list.length !== valid.size) fail("A ordem das colunas mudou. Atualize a página.");
+    if (new Set(list).size !== list.length || list.some((c) => !valid.has(c)) || list.length !== valid.size) fail("A ordem das colunas mudou. Atualize a página.");
     await db.$transaction(list.map((cid, i) => db.column.update({ where: { id: cid }, data: { position: i } })));
     publishBoard(boardId, null);
   });

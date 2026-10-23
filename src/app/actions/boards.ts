@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 import { db } from "@/server/db";
 import { assertAdmin, assertUser } from "@/server/auth/current";
 import { loadBoard } from "@/server/board";
-import { audit } from "@/server/events";
+import { audit, nextCardNumber } from "@/server/events";
 import { fail, hex, id, run } from "@/server/action";
 import { publishBoard } from "@/server/live";
 
@@ -164,7 +164,7 @@ export async function listBoardsForMove() {
     const boards = await db.board.findMany({
       where: { archivedAt: null },
       orderBy: { position: "asc" },
-      select: { id: true, name: true, color: true, columns: { orderBy: { position: "asc" }, select: { id: true, name: true } } },
+      select: { id: true, name: true, color: true, columns: { where: { archivedAt: null }, orderBy: { position: "asc" }, select: { id: true, name: true } } },
       take: 300,
     });
     return boards;
@@ -200,8 +200,7 @@ function parseJson<T>(s: string, fallback: T): T {
 
 /** Próximos números de demanda (#), reservados de uma vez. */
 async function reserveNumbers(tx: Prisma.TransactionClient, count: number) {
-  const last = await tx.card.findFirst({ orderBy: { number: "desc" }, select: { number: true } });
-  const start = (last?.number ?? 0) + 1;
+  const start = await nextCardNumber(tx);
   return Array.from({ length: count }, (_, i) => start + i);
 }
 
@@ -213,10 +212,10 @@ export async function duplicateBoard(boardId: string, input: { name: string; wit
     const src = await db.board.findFirst({
       where: { id: id.parse(boardId), archivedAt: null },
       include: {
-        columns: { orderBy: { position: "asc" } },
+        columns: { where: { archivedAt: null }, orderBy: { position: "asc" } },
         cards: {
           // sem demandas: filtro que não traz nada (mantém o tipo do include)
-          where: input.withCards ? { archivedAt: null } : { id: "" },
+          where: input.withCards ? { archivedAt: null, isTemplate: false, column: { archivedAt: null } } : { id: "" },
           orderBy: { position: "asc" },
           take: 1000,
           include: { assignees: true, labels: true, checklists: { orderBy: { position: "asc" }, include: { items: { orderBy: { position: "asc" } } } } },
@@ -274,8 +273,8 @@ export async function saveBoardTemplate(boardId: string, input: { name: string; 
     const b = await db.board.findUnique({
       where: { id: id.parse(boardId) },
       include: {
-        columns: { orderBy: { position: "asc" } },
-        cards: { where: { archivedAt: null, completedAt: null }, orderBy: { position: "asc" }, take: 200, include: { labels: true, checklists: { include: { items: { orderBy: { position: "asc" } } } } } },
+        columns: { where: { archivedAt: null }, orderBy: { position: "asc" } },
+        cards: { where: { archivedAt: null, completedAt: null, isTemplate: false, column: { archivedAt: null } }, orderBy: { position: "asc" }, take: 200, include: { labels: true, checklists: { include: { items: { orderBy: { position: "asc" } } } } } },
       },
     });
     if (!b) fail("Quadro não encontrado.");

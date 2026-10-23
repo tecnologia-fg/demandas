@@ -97,8 +97,8 @@ function CardTemplates({ labels }: { labels: Label[] }) {
                 <p className="truncate text-[15px] font-semibold">{t.name}</p>
                 <p className="truncate text-sm text-fg-2">{t.title}</p>
               </div>
-              <button type="button" aria-label={`Editar ${t.name}`} onClick={() => setEditing(t)} className="inline-flex size-8 items-center justify-center rounded-full text-fg-2 hover:bg-surface-2"><Pencil className="size-3.5" /></button>
-              <button
+              {!t.sourceBoard && <button type="button" aria-label={`Editar ${t.name}`} onClick={() => setEditing(t)} className="inline-flex size-8 items-center justify-center rounded-full text-fg-2 hover:bg-surface-2"><Pencil className="size-3.5" /></button>}
+              {!t.sourceBoard && <button
                 type="button"
                 aria-label={`Excluir ${t.name}`}
                 onClick={async () => {
@@ -110,9 +110,10 @@ function CardTemplates({ labels }: { labels: Label[] }) {
                 className="inline-flex size-8 items-center justify-center rounded-full text-fg-2 hover:bg-surface-2 hover:text-danger"
               >
                 <Trash2 className="size-3.5" />
-              </button>
+              </button>}
             </div>
             <div className="flex flex-wrap items-center gap-1.5">
+              {t.sourceBoard && <span className="text-xs text-fg-3">Trello · {t.attachmentCount ?? 0} anexos · preservado na origem</span>}
               {t.priority && <PriorityIcon priority={t.priority} size={20} />}
               {t.checklist.length > 0 && (
                 <span className="inline-flex h-6 items-center gap-1 rounded-full bg-surface-2 px-2 text-[11.5px] font-medium text-fg-2">

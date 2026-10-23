@@ -1,0 +1,9 @@
+node_modules
+.next
+.git
+.env*
+storage
+research/trello/local
+prisma/backups
+credenciais*
+*.tsbuildinfo

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Copy, KeyRound, LayoutTemplate, Palette, Pencil, Plus, ShieldCheck, Tag, Trash2, Users, ScrollText } from "lucide-react";
 import { BrandManual } from "./BrandManual";
@@ -19,6 +20,8 @@ type L = { id: string; name: string; color: string; uses: number };
 type Log = { id: string; action: string; detail: string | null; actor: string; createdAt: string };
 
 const ACTION_LABEL: Record<string, string> = {
+  "trello.labels.review": "Revisou etiquetas importadas",
+  "trello.labels.undo": "Desfez revisão de etiquetas",
   "user.create": "Cadastrou pessoa",
   "user.update": "Alterou pessoa",
   "user.reset_password": "Gerou nova senha",
@@ -50,12 +53,15 @@ export function SettingsView({ meId, isAdmin, users, labels, logs, initialTab }:
       <PageHeader
         title={tab === "marca" ? "Manual da marca" : "Configurações"}
         actions={
+          <div className="flex flex-wrap items-center gap-3">
+          {isAdmin ? <Link href="/configuracoes/importar-trello" className="rounded-full bg-panel px-4 py-2.5 text-sm font-medium text-panel-fg">Importar Trello</Link> : null}
           <div className="glass-strong flex h-11 items-center rounded-full p-1">
             {tabs.map(([v, label, Icon]) => (
               <button key={v} type="button" onClick={() => { setTab(v); window.history.replaceState(null, "", v === "equipe" ? "/configuracoes" : `/configuracoes?aba=${v}`); }} className={cn("inline-flex h-9 items-center gap-2 rounded-full px-3.5 sm:px-4 text-[13.5px] font-medium", tab === v ? "bg-surface text-fg shadow-sm" : "text-fg-2")}>
                 <Icon className="size-4" /> <span className="max-sm:sr-only">{label}</span>
               </button>
             ))}
+          </div>
           </div>
         }
       />

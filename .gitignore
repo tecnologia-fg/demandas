@@ -49,5 +49,8 @@ next-env.d.ts
 /.claude/
 /prisma/backups/
 
+# Exports e catálogos reais do Trello (dados de clientes e URLs privadas)
+/research/trello/local/
+
 # acessos da prévia online (nunca no git)
 credenciais*

@@ -92,6 +92,7 @@ export type BoardData = {
 };
 
 export type CardDetail = CardSummary & {
+  trelloOrigin?: { url: string; list: string; assignees: { id: string; name: string }[]; fields: { name: string; value: string }[] } | null;
   description: string | null;
   estimatedMin: number | null;
   boardName: string;

@@ -6,6 +6,7 @@ import { assertUser } from "@/server/auth/current";
 import { cleanRich } from "@/server/richtext";
 import { fail, id, run } from "@/server/action";
 import { PRIORITIES } from "@/lib/domain";
+import { templateSourceInclude, TRELLO_TEMPLATE_PREFIX } from "@/server/template-source";
 
 export type TemplateData = {
   id: string;
@@ -16,6 +17,8 @@ export type TemplateData = {
   estimatedMin: number | null;
   checklist: string[];
   labelIds: string[];
+  sourceBoard?: string;
+  attachmentCount?: number;
 };
 
 function parseList(s: string): string[] {
@@ -41,7 +44,8 @@ export async function listTemplates() {
   return run(async (): Promise<TemplateData[]> => {
     await assertUser();
     const list = await db.cardTemplate.findMany({ orderBy: { name: "asc" }, take: 200 });
-    return list.map((t) => ({
+    const imported = await db.card.findMany({ where: { isTemplate: true, archivedAt: null, board: { archivedAt: null }, column: { archivedAt: null } }, include: templateSourceInclude, orderBy: { title: "asc" } });
+    return [...list.map((t) => ({
       id: t.id,
       name: t.name,
       title: t.title,
@@ -50,7 +54,12 @@ export async function listTemplates() {
       estimatedMin: t.estimatedMin,
       checklist: parseList(t.checklist),
       labelIds: parseList(t.labelIds),
-    }));
+    })), ...imported.map((c) => ({
+      id: `${TRELLO_TEMPLATE_PREFIX}${c.id}`, name: `${c.board.name} · ${c.title}`, title: c.title,
+      description: c.description, priority: c.priority, estimatedMin: c.estimatedMin,
+      checklist: c.checklists.flatMap((l) => l.items.map((i) => i.text)), labelIds: c.labels.map((l) => l.labelId),
+      sourceBoard: c.board.name, attachmentCount: c.attachments.length,
+    }))];
   });
 }
 

@@ -8,10 +8,20 @@
     "start": "TZ=America/Sao_Paulo next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
+    "test:trello": "node --import tsx --test scripts/trello/preview.test.ts scripts/trello/attachments.test.ts scripts/trello/workspace.test.mjs scripts/trello/api-client.test.mjs scripts/trello/label-review.test.ts scripts/trello/import-plan.test.ts scripts/trello/import-safety.test.mjs",
+    "trello:capture": "node --env-file=.env scripts/trello/capture.mjs",
+    "trello:verify": "node scripts/trello/verify-capture.mjs",
+    "trello:rehearsal": "node scripts/trello/rehearsal-env.mjs && docker compose -f docker/trello-rehearsal.compose.yml up -d --build",
+    "trello:rehearsal:import": "docker compose -f docker/trello-rehearsal.compose.yml exec -T web node --import tsx scripts/trello/rehearsal.mjs",
+    "trello:rehearsal:audit": "docker compose -f docker/trello-rehearsal.compose.yml exec -T web node --import tsx scripts/trello/rehearsal-audit.mjs",
+    "test:trello:ui": "node scripts/trello/preview-browser.mjs",
     "db:push": "prisma db push",
     "db:deploy": "prisma migrate deploy",
     "db:seed": "tsx --env-file=.env prisma/seed.ts",
-    "db:reset": "prisma db push --force-reset --skip-generate && tsx --env-file=.env prisma/seed.ts"
+    "db:reset": "prisma db push --force-reset --skip-generate && tsx --env-file=.env prisma/seed.ts",
+    "trello:import": "node --import tsx scripts/trello/import.mjs",
+    "test:trello:final": "docker compose -f docker/trello-rehearsal.compose.yml exec -T web node --import tsx scripts/trello/final-validation.mjs",
+    "test:trello:flows": "node --env-file=research/trello/local/rehearsal/.env scripts/trello/flows-browser.mjs"
   },
   "prisma": {
     "seed": "tsx --env-file=.env prisma/seed.ts"
@@ -32,6 +42,7 @@
     "@tiptap/suggestion": "^3.31.4",
     "jose": "^6.2.12",
     "lucide-react": "^1.54.0",
+    "marked": "18.1.1",
     "next": "^16.3.5",
     "prisma": "6.19.3",
     "react": "^19.2.8",
@@ -47,10 +58,12 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@types/sanitize-html": "^2.16.2",
+    "esbuild": "0.28.2",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.5",
     "opentype.js": "^2.0.0",
     "playwright-core": "^1.64.0",
+    "postcss": "8.5.23",
     "tailwindcss": "^4.3.3",
     "tsx": "^4.23.15",
     "typescript": "^5.9.3"

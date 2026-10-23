@@ -25,6 +25,8 @@ export async function audit(actorId: string | null, action: string, detail?: str
 
 /** Próximo número sequencial de demanda (#123). */
 export async function nextCardNumber(tx: Tx) {
+  // Imports and ordinary creation share this lock, including when an import resumes.
+  await tx.$executeRaw`SELECT pg_advisory_xact_lock(22102026)`;
   const last = await tx.card.findFirst({ orderBy: { number: "desc" }, select: { number: true } });
   return (last?.number ?? 0) + 1;
 }

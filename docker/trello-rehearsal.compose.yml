@@ -1,0 +1,37 @@
+name: dmanda-trello-rehearsal
+services:
+  db:
+    image: postgres:17-alpine
+    env_file: ../research/trello/local/rehearsal/.env
+    volumes:
+      - rehearsal-db:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U dmanda_rehearsal -d dmanda_trello_rehearsal']
+      interval: 3s
+      timeout: 3s
+      retries: 30
+  web:
+    command: [sh, -c, 'npx prisma generate && npx prisma migrate deploy && node node_modules/next/dist/bin/next dev --webpack --hostname 0.0.0.0']
+    environment:
+      WATCHPACK_POLLING: 'true'
+    build:
+      context: ..
+      dockerfile: docker/trello-rehearsal.Dockerfile
+    env_file: ../research/trello/local/rehearsal/.env
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - '127.0.0.1:3100:3000'
+    volumes:
+      - ../src:/app/src:ro
+      - ../scripts:/app/scripts:ro
+      - ../prisma:/app/prisma:ro
+      - ../next.config.mjs:/app/next.config.mjs:ro
+      - ../research/trello/local/api-capture/2026-10-22:/app/research/trello/local/api-capture/2026-10-22:ro
+      - ../research/trello/local/rehearsal:/app/research/trello/local/rehearsal
+      - ../research/trello/migration-decisions.json:/app/research/trello/migration-decisions.json:ro
+      - rehearsal-storage:/app/storage
+volumes:
+  rehearsal-db:
+  rehearsal-storage:

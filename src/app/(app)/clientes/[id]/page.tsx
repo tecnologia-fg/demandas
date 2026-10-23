@@ -21,18 +21,18 @@ export default async function ClientPage({ params }: { params: Promise<{ id: str
   if (!client) notFound();
   const [open, done, total, lookups] = await Promise.all([
     db.card.findMany({
-      where: { clientId: client.id, archivedAt: null, completedAt: null, board: { archivedAt: null } },
+      where: { clientId: client.id, archivedAt: null, isTemplate: false, column: { archivedAt: null }, completedAt: null, board: { archivedAt: null } },
       include: { ...cardSummaryInclude, board: { select: { name: true, color: true } }, column: { select: { name: true } } },
       orderBy: [{ dueDate: "asc" }, { createdAt: "asc" }],
       take: 500,
     }),
     db.card.findMany({
-      where: { clientId: client.id, completedAt: { not: null }, board: { archivedAt: null } },
+      where: { clientId: client.id, isTemplate: false, column: { archivedAt: null }, completedAt: { not: null }, board: { archivedAt: null } },
       include: { ...cardSummaryInclude, board: { select: { name: true, color: true } }, column: { select: { name: true } } },
       orderBy: { completedAt: "desc" },
       take: 20,
     }),
-    db.card.count({ where: { clientId: client.id } }),
+    db.card.count({ where: { clientId: client.id, isTemplate: false } }),
     getLookups(),
   ]);
   const row = (c: (typeof open)[number]) => ({ ...toCardSummary(c), boardName: c.board.name, boardColor: c.board.color, columnName: c.column.name });

@@ -20,7 +20,7 @@ export default async function AgendaPage() {
   const [cards, boards, lookups] = await Promise.all([
     // com prazo: de 6 meses atrás a 1 ano à frente; sem prazo: só as abertas (lista lateral)
     db.card.findMany({
-      where: { archivedAt: null, board: { archivedAt: null }, OR: [{ dueDate: { gte: monthsFromNow(-6), lte: monthsFromNow(12) } }, { dueDate: null, completedAt: null }] },
+      where: { archivedAt: null, isTemplate: false, column: { archivedAt: null }, board: { archivedAt: null }, OR: [{ dueDate: { gte: monthsFromNow(-6), lte: monthsFromNow(12) } }, { dueDate: null, completedAt: null }] },
       include: cardSummaryInclude,
       orderBy: [{ dueDate: "asc" }],
       take: 3000,

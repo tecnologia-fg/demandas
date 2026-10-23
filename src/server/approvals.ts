@@ -6,6 +6,8 @@ import { db } from "./db";
 import { logActivity } from "./events";
 import { STORAGE_DIR, extOf, storagePath } from "./storage";
 import type { ApprovalFormat, ApprovalPostView, ApprovalRound, ApprovalStatus, PortalPost } from "@/lib/types";
+import { approvalFlowKey, resolveApprovalFlow } from "@/lib/trello/approval-flow";
+import { ActionError } from "./auth/current";
 
 type Tx = Prisma.TransactionClient;
 const norm = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -16,7 +18,15 @@ export const isApprovalMedia = (mime: string) => (mime.startsWith("image/") && !
 
 /** Coluna de aprovação do quadro (a primeira não concluída com "aprova" no nome), a seguinte e a de volta (produção). */
 export async function approvalColumns(tx: Tx, boardId: string) {
-  const cols = await tx.column.findMany({ where: { boardId }, orderBy: { position: "asc" }, select: { id: true, name: true, isDone: true } });
+  const cols = await tx.column.findMany({ where: { boardId, archivedAt: null }, orderBy: { position: "asc" }, select: { id: true, name: true, isDone: true } });
+  const configured = await tx.appSetting.findUnique({ where: { key: approvalFlowKey(boardId) } });
+  if (configured) {
+    try { return resolveApprovalFlow(JSON.parse(configured.value), cols); }
+    catch (error) { throw new ActionError((error as Error).message); }
+  }
+  if (await tx.importedEntity.findFirst({ where: { kind: "board", targetId: boardId, batch: { source: "trello" } } })) {
+    throw new ActionError("Configure os destinos em Configurações → Importar Trello → Destinos de aprovação antes de usar o portal neste quadro.");
+  }
   const i = cols.findIndex((c) => !c.isDone && norm(c.name).includes("aprova"));
   const done = cols.find((c) => c.isDone && norm(c.name).includes("publica")) ?? cols.find((c) => c.isDone) ?? null;
   if (i < 0) return { approval: null, next: null, back: null, done };

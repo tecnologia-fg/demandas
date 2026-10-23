@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "workspace": "agenciaformulagroup",
+  "decidedBy": "user",
+  "decidedOn": "2026-10-23",
+  "policyFiles": {
+    "count": 32,
+    "decision": "backup_only_until_review",
+    "recovered": true,
+    "import": false,
+    "userAnswer": "Manter no backup até revisar"
+  },
+  "missingContent": {
+    "decision": "accept_and_record",
+    "activeAttachmentReferences": 6,
+    "comments": 1,
+    "recovered": false,
+    "userAnswer": "Aceitar e registrar as ausências"
+  },
+  "historicalAttachments": {
+    "decision": "metadata_only",
+    "historicalCounterGap": 1,
+    "note": "Anexos fora dos 15 quadros iniciais permanecem fora do escopo de binários; a divergência histórica continua identificada."
+  },
+  "details": {
+    "policyFiles": "local/api-capture/2026-10-22/reports/import-policy-review.csv",
+    "missingContent": "local/api-capture/2026-10-22/reports/counter-discrepancies.json"
+  }
+}

@@ -19,13 +19,13 @@ export default async function BoardsPage({ searchParams }: { searchParams: Promi
     take: 300,
     include: {
       favorites: { where: { userId: user.id }, select: { userId: true } },
-      columns: { orderBy: { position: "asc" }, select: { id: true, name: true, color: true, isDone: true } },
+      columns: { where: { archivedAt: null }, orderBy: { position: "asc" }, select: { id: true, name: true, color: true, isDone: true } },
     },
   });
   const ids = boards.map((b) => b.id);
   const [perColumn, late, people, folders] = await Promise.all([
-    db.card.groupBy({ by: ["columnId"], where: { boardId: { in: ids }, archivedAt: null }, _count: { _all: true } }),
-    db.card.groupBy({ by: ["boardId"], where: { boardId: { in: ids }, archivedAt: null, completedAt: null, dueDate: { lt: today } }, _count: { _all: true } }),
+    db.card.groupBy({ by: ["columnId"], where: { boardId: { in: ids }, archivedAt: null, isTemplate: false, column: { archivedAt: null } }, _count: { _all: true } }),
+    db.card.groupBy({ by: ["boardId"], where: { boardId: { in: ids }, archivedAt: null, isTemplate: false, column: { archivedAt: null }, completedAt: null, dueDate: { lt: today } }, _count: { _all: true } }),
     db.cardAssignee.findMany({
       where: { card: { boardId: { in: ids }, archivedAt: null, completedAt: null } },
       select: { card: { select: { boardId: true } }, user: { select: { id: true, name: true, color: true, avatarUrl: true } } },

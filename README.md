@@ -13,6 +13,8 @@ as instruções de banco `file:...` desse guia não se aplicam ao schema atual.
 |---|---|
 | [INSTALACAO.md](INSTALACAO.md) | Passo a passo para instalar no computador, colocar no ar numa VPS, fazer backup, atualizar e resolver problemas. Cada etapa tem um prompt pronto para a IA. |
 | [ARQUITETURA.md](ARQUITETURA.md) | Como o sistema funciona por dentro, pasta por pasta e arquivo por arquivo. |
+| [Pesquisa Trello](research/trello/README.md) | Inventário dos 14 quadros Trello e proposta de importação para o Dmanda. |
+| [Roadmap Trello](research/trello/roadmap.md) | Prévia de importação, ensaio no Docker e migração definitiva. |
 | [PROMPTS.md](PROMPTS.md) | Prompts prontos para pedir mudanças à IA: cores e logo, campo novo, colunas, notificações, tradução, HTTPS. |
 
 ## Funcionalidades

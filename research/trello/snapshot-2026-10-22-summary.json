@@ -1,0 +1,124 @@
+{
+  "snapshot": "2026-10-22",
+  "sources": [
+    {
+      "filename": "42ooeXhg - master-med.json",
+      "id": "69c6c0750ff4946f159b3e9e",
+      "name": "Master Med",
+      "sha256": "6ae32ce46c148f2f14b7cd4dc9a14f611f64bbfeb4a2aca72fe6abe79edfe003",
+      "cards": 170
+    },
+    {
+      "filename": "7zZoZrQH - spmar-complexo-alto-do-tiete.json",
+      "id": "69cc2095780821c0524d235c",
+      "name": "SPMAR - Complexo Alto do Tietê",
+      "sha256": "997d3bc29b3d04d8418956b7f2f6d3e4d5211a9c973a4c9e92c811e7a5366fd2",
+      "cards": 9
+    },
+    {
+      "filename": "ECfsYz7F - liquitudo.json",
+      "id": "69c6c154f0478dc486ed668d",
+      "name": "Liquitudo",
+      "sha256": "9e9bdb98bca8ad39d86e585beb6674046bf595f24e9021d2c4a6c91f984be42d",
+      "cards": 29
+    },
+    {
+      "filename": "Ial0vdD8 - formula-group.json",
+      "id": "69c6c00c4828d3840d2657be",
+      "name": "_Formula Group",
+      "sha256": "dde12da2221077a9281b32120c84a0afa013b831ec31222969be4b1a53b09dd6",
+      "cards": 18
+    },
+    {
+      "filename": "QfUX6XlF - superbom.json",
+      "id": "69c3e1ef35b848ba043eebeb",
+      "name": "SUPERBOM",
+      "sha256": "d45d2cc7b21adca8096e6b96e6cf093cd62cd60a8f2c510c77645ed7d1a3c5fd",
+      "cards": 165
+    },
+    {
+      "filename": "WSFVFzWy - master-health.json",
+      "id": "69c6c09d6908077e103bf0be",
+      "name": "Master Health",
+      "sha256": "0345566ad4b4783d1cfe1707bc009ca67353ceada31f4f5ded5e580f972a92f9",
+      "cards": 138
+    },
+    {
+      "filename": "Z4koALxc - trafego-pago.json",
+      "id": "69dce5b91d442bf79b83bc49",
+      "name": "_Tráfego Pago",
+      "sha256": "2f4c81491cf69a90f17d5fb117ee12f8c4d18e5221e73013f93e3d2b15356c28",
+      "cards": 49
+    },
+    {
+      "filename": "a2JtuK6Y - cafu-camp.json",
+      "id": "69ce9064d3c6419d08dd88d6",
+      "name": "Cafu Camp",
+      "sha256": "19fc29e1001edddae3e05ed1296aab4cc88c1922714d10fcb5f2d80d879cf6d1",
+      "cards": 19
+    },
+    {
+      "filename": "eV9m8vZ9 - primordial-cuidados.json",
+      "id": "69c6c030d78c3436e5508923",
+      "name": "Primordial cuidados",
+      "sha256": "f63b512de070d0394926101a9715ff5cbd13f2e54b7086acffcad1efc3d4ee13",
+      "cards": 107
+    },
+    {
+      "filename": "g5vG08EU - cevisa.json",
+      "id": "69c2a65991435669977b3f3f",
+      "name": "CEVISA",
+      "sha256": "7ce82f4568156f175f9d66009bec3df2c9f8232ed44667a6f908b6464f44440d",
+      "cards": 161
+    },
+    {
+      "filename": "hB851IXz - rivellino.json",
+      "id": "69c6c15f80cc0135c782465f",
+      "name": "Rivellino",
+      "sha256": "1ebcfaab922f57c193136c7cdcad8a09e84c6be433adb2c270175c9f78900993",
+      "cards": 224
+    },
+    {
+      "filename": "iT8sXgPj - spmar.json",
+      "id": "69c6c052fd24c610bedb958a",
+      "name": "SPMAR",
+      "sha256": "1529344f3f664d55b2dfc1afb5edbcc9a468d87d1ec8b99be788e9506b081412",
+      "cards": 133
+    },
+    {
+      "filename": "jRyXpW4P - tga-group.json",
+      "id": "69c9bbbfa25c014331185e7e",
+      "name": "TGA Group",
+      "sha256": "1ddc98dbc610116e7ffbc0e3962816e7feda8be95c8a981edbcf3edf4e237689",
+      "cards": 218
+    },
+    {
+      "filename": "tWwhLTcK - deputada-leci-brandao.json",
+      "id": "69c6c043e1499cc2979581ee",
+      "name": "Deputada Leci Brandão",
+      "sha256": "cfe3e8f51d8d00d22aeffa9b0d4be04ee82424e3d9c5c7680f9df458a94ab92e",
+      "cards": 378
+    },
+    {
+      "filename": "te5dtnqv - magik.json",
+      "id": "69c6c181df2f45ff5c4cf8d3",
+      "name": "Magik",
+      "sha256": "597c2a8210e607c1cd9d0d2301f57ae5da907336a57dad46405f548e44c7f003",
+      "cards": 10
+    }
+  ],
+  "totals": {
+    "boards": 15,
+    "cards": 1828,
+    "attachments": 1558,
+    "attachmentBytes": 3757171561,
+    "missingCommentsByBadge": 108
+  },
+  "attachmentStatuses": {
+    "pending_recovery": 1513,
+    "policy_review": 32,
+    "external_link": 13,
+    "missing_source": 0
+  },
+  "missingAttachmentRecords": 6
+}

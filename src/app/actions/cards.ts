@@ -15,6 +15,8 @@ import { PRIORITIES, PRIORITY_META, REPEATS, type Priority } from "@/lib/domain"
 import { addDays, fromDayKey, shortDay, toDayKey, todayKey } from "@/lib/dates";
 import type { CardDetail } from "@/lib/types";
 import { loadPostView } from "@/server/approvals";
+import { importOrigin } from "@/lib/trello/import-origin";
+import { copyTemplateFiles, loadTrelloTemplate, removeTemplateCopies, TRELLO_TEMPLATE_PREFIX } from "@/server/template-source";
 
 type Tx = Prisma.TransactionClient;
 
@@ -56,17 +58,22 @@ export async function createCard(input: {
     const title = z.string().trim().min(1, "Escreva o título da demanda.").max(200).parse(input.title);
     const due = dayKey.optional().parse(input.dueDate ?? null);
     const column = await db.column.findFirst({
-      where: { id: id.parse(input.columnId), boardId: id.parse(input.boardId), board: { archivedAt: null } },
+      where: { id: id.parse(input.columnId), boardId: id.parse(input.boardId), archivedAt: null, board: { archivedAt: null } },
       include: { board: { select: { clientId: true } } },
     });
     if (!column) fail("Coluna não encontrada.");
     const assigneeIds = await validUsers(input.assigneeIds ?? []);
     // cliente: o escolhido (null = nenhum) ou, se não veio, o padrão do quadro
     const clientId = input.clientId === undefined ? column.board.clientId : input.clientId ? await validClient(input.clientId) : null;
-    const template = input.templateId ? await db.cardTemplate.findUnique({ where: { id: id.parse(input.templateId) } }) : null;
-    const tplChecklist = template ? jsonList(template.checklist) : [];
-    const tplLabels = template ? (await db.label.findMany({ where: { id: { in: jsonList(template.labelIds) } }, select: { id: true } })).map((l) => l.id) : [];
-    const card = await db.$transaction(async (tx) => {
+    const sourceTemplate = input.templateId?.startsWith(TRELLO_TEMPLATE_PREFIX) ? await loadTrelloTemplate(input.templateId) : null;
+    const template = sourceTemplate ?? (input.templateId && !input.templateId.startsWith(TRELLO_TEMPLATE_PREFIX) ? await db.cardTemplate.findUnique({ where: { id: id.parse(input.templateId) } }) : null);
+    if (input.templateId && !template) fail("Modelo indisponível. Atualize a lista de modelos.");
+    const savedTemplate = template && "checklist" in template ? template : null;
+    const tplChecklist = savedTemplate ? jsonList(savedTemplate.checklist) : [];
+    const tplLabels = sourceTemplate ? sourceTemplate.labels.map((l) => l.labelId) : savedTemplate ? (await db.label.findMany({ where: { id: { in: jsonList(savedTemplate.labelIds) } }, select: { id: true } })).map((l) => l.id) : [];
+    const files = await copyTemplateFiles(sourceTemplate?.attachments ?? [], user.id);
+    let card;
+    try { card = await db.$transaction(async (tx) => {
       const number = await nextCardNumber(tx);
       const edge = await tx.card.findFirst({
         where: { columnId: column.id },
@@ -88,19 +95,26 @@ export async function createCard(input: {
           description: template?.description ?? null,
           priority: template?.priority ?? null,
           estimatedMin: template?.estimatedMin ?? null,
+          coverColor: sourceTemplate?.coverColor ?? null,
           assignees: { create: assigneeIds.map((userId) => ({ userId })) },
           labels: { create: tplLabels.map((labelId) => ({ labelId })) },
-          checklists: tplChecklist.length
+          checklists: sourceTemplate ? { create: sourceTemplate.checklists.map((list) => ({ title: list.title, position: list.position,
+            items: { create: list.items.map((item) => ({ text: item.text, position: item.position, done: false })) } })) } : tplChecklist.length
             ? { create: { title: "Checklist", items: { create: tplChecklist.map((text, i) => ({ text, position: i })) } } }
             : undefined,
         },
       });
-      await logActivity(tx, c.id, user.id, "created", { column: column.name });
+      for (const file of files) {
+        const { sourceId, ...data } = file;
+        const attachment = await tx.attachment.create({ data: { ...data, cardId: c.id } });
+        if (sourceId === sourceTemplate?.coverAttachmentId) await tx.card.update({ where: { id: c.id }, data: { coverAttachmentId: attachment.id } });
+      }
+      await logActivity(tx, c.id, user.id, "created", { column: column.name, ...(sourceTemplate ? { templateSourceCardId: sourceTemplate.id } : {}) });
       if (assigneeIds.length) {
         await notify(tx, { to: assigneeIds, actorId: user.id, cardId: c.id, type: "ASSIGNED", text: `${user.name} colocou você em #${number} ${title}` });
       }
       return summary(tx, c.id, user.id);
-    });
+    }, { timeout: 60000 }); } catch (error) { await removeTemplateCopies(files); throw error; }
     return card;
   });
 }
@@ -135,7 +149,7 @@ export async function moveCard(input: { cardId: string; toColumnId: string; toIn
     const toIndex = z.number().int().min(0).max(5000).parse(input.toIndex);
     const [from, to] = await Promise.all([
       db.column.findUnique({ where: { id: card.columnId } }),
-      db.column.findFirst({ where: { id: id.parse(input.toColumnId), boardId: card.boardId } }),
+      db.column.findFirst({ where: { id: id.parse(input.toColumnId), boardId: card.boardId, archivedAt: null } }),
     ]);
     if (!to || !from) fail("Coluna não encontrada.");
     return db.$transaction(async (tx) => {
@@ -428,7 +442,7 @@ export async function moveCardToBoard(cardId: string, boardId: string, columnId:
   return run(async () => {
     const user = await assertUser();
     const card = await findCard(cardId);
-    const column = await db.column.findFirst({ where: { id: id.parse(columnId), boardId: id.parse(boardId), board: { archivedAt: null } }, include: { board: true } });
+    const column = await db.column.findFirst({ where: { id: id.parse(columnId), boardId: id.parse(boardId), archivedAt: null, board: { archivedAt: null } }, include: { board: true } });
     if (!column) fail("Escolha o quadro e a coluna de destino.");
     const fromColumn = await db.column.findUniqueOrThrow({ where: { id: card.columnId } });
     return db.$transaction(async (tx) => {
@@ -450,7 +464,7 @@ export async function getCardDetail(cardId: string) {
       where: { id: id.parse(cardId) },
       include: {
         ...cardSummaryInclude,
-        board: { select: { name: true, archivedAt: true, columns: { orderBy: { position: "asc" }, select: { id: true, name: true, color: true, isDone: true } } } },
+        board: { select: { name: true, archivedAt: true, columns: { where: { archivedAt: null }, orderBy: { position: "asc" }, select: { id: true, name: true, color: true, isDone: true } } } },
         column: { select: { name: true } },
         createdBy: { select: { id: true, name: true, color: true, avatarUrl: true } },
         checklists: { orderBy: { position: "asc" }, include: { items: { orderBy: { position: "asc" } } } },
@@ -467,8 +481,10 @@ export async function getCardDetail(cardId: string) {
     const mine = c.timeEntries.find((t) => t.userId === user.id && !t.endedAt);
     const post = await db.approvalPost.findUnique({ where: { cardId: c.id }, select: { id: true } });
     const approvalPost = post ? await loadPostView(post.id) : null;
+    const imported = await db.importedEntity.findFirst({ where: { kind: "card", targetId: c.id, batch: { source: "trello" } }, select: { original: true } });
     return {
       ...base,
+      trelloOrigin: imported ? importOrigin(imported.original) : null,
       description: c.description,
       estimatedMin: c.estimatedMin,
       boardName: c.board.name,
@@ -476,7 +492,7 @@ export async function getCardDetail(cardId: string) {
       boardColumns: c.board.columns,
       createdBy: c.createdBy ? toUserLite(c.createdBy) : null,
       checklists: c.checklists.map((l) => ({ id: l.id, title: l.title, items: l.items.map((i) => ({ id: i.id, text: i.text, done: i.done })) })),
-      comments: c.comments.map((m) => ({ id: m.id, body: m.body, createdAt: m.createdAt.toISOString(), editedAt: m.editedAt?.toISOString() ?? null, user: toUserLite(m.user) })),
+      comments: c.comments.map((m) => ({ id: m.id, body: m.body, createdAt: m.createdAt.toISOString(), editedAt: m.editedAt?.toISOString() ?? null, user: toUserLite(m.user ?? { id: `trello:${m.externalAuthorId ?? m.id}`, name: `${m.externalAuthorName ?? "Autor desconhecido"} (Trello)`, color: "#64748b" }) })),
       attachments: c.attachments.map((a) => ({ id: a.id, name: a.name, mime: a.mime, size: a.size, createdAt: a.createdAt.toISOString(), uploadedBy: a.uploadedBy?.name ?? null })),
       activities: c.activities.map((a) => ({
         id: a.id,

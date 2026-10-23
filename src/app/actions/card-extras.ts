@@ -71,7 +71,7 @@ export async function addComment(cardId: string, body: string) {
         type: "COMMENT",
         text: `${user.name} comentou em #${card.number} ${card.title}`,
       });
-      return { id: c.id, body: c.body, createdAt: c.createdAt.toISOString(), editedAt: null, user: toUserLite(c.user) };
+      return { id: c.id, body: c.body, createdAt: c.createdAt.toISOString(), editedAt: null, user: toUserLite(user) };
     }).then((r) => {
       changed(card, user.id);
       return r;

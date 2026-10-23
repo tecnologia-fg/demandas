@@ -1,0 +1,1338 @@
+{
+  "scope": "Snapshots fornecidos; não comprova inventário completo da conta Trello",
+  "totals": {
+    "boards": 14,
+    "cards": 1766,
+    "distinctCardIds": 1766,
+    "sourceBytes": 24892942,
+    "openLists": 128,
+    "archivedLists": 10,
+    "cardsInArchivedLists": 75,
+    "archivedCards": 378,
+    "templates": 29,
+    "archivedTemplates": 7,
+    "templateTitles": {
+      "dia/mês - Dia da semana | Reunião / Captação": 13,
+      "Template Briefing": 15,
+      "18/05 - Segunda | Reunião": 1
+    },
+    "templatesInArchivedLists": 0,
+    "unarchivedCardsInArchivedLists": 10,
+    "attachments": 1546,
+    "attachmentBytes": 3684618138,
+    "uploadAttachments": 1533,
+    "externalAttachments": 13,
+    "attachmentsOver25MiB": 15,
+    "unsupportedAttachments": 23,
+    "uniqueFilePolicyExceptions": 31,
+    "attachmentExtensions": {
+      "pdf": 96,
+      "png": 932,
+      "docx": 20,
+      "doc": 1,
+      "pptx": 4,
+      "jpeg": 232,
+      "m4a": 4,
+      "jpg": 165,
+      "gif": 10,
+      "psd": 2,
+      "": 12,
+      "zip": 3,
+      "rar": 1,
+      "mp4": 39,
+      "dng": 6,
+      "ai": 1,
+      "svg": 6,
+      "webp": 3,
+      "xlsx": 2,
+      "cr2": 2,
+      "avif": 4,
+      "mov": 1
+    },
+    "attachmentHosts": {
+      "trello.com": 1535,
+      "docs.google.com": 3,
+      "share.google": 2,
+      "upload.imprimastore.net": 1,
+      "www.terrasgoncalves.com.br": 2,
+      "www.figma.com": 1,
+      "wa.me": 1,
+      "www.instagram.com": 1
+    },
+    "checklists": 7,
+    "checklistItems": 50,
+    "membersUnique": 13,
+    "memberBoardLinks": 120,
+    "actionAuthorsUnique": 14,
+    "identitiesInMembersOrActions": 17,
+    "creatorIdsUnique": 41,
+    "creatorIdsOutsideMembersAndActions": 30,
+    "cardsWithCreatorOutsideMembersAndActions": 134,
+    "labelDefinitions": 116,
+    "labelNamesNormalized": 20,
+    "exportedComments": 109,
+    "missingCommentsByBadge": 105,
+    "actions": 9966,
+    "boardsAtActionCap": 9,
+    "completedOutsideFinal": 173,
+    "incompleteInFinal": 12,
+    "withDue": 1455,
+    "withStart": 4,
+    "withDescription": 1551,
+    "withoutAssignees": 796,
+    "titlesWithDatePrefix": 1321,
+    "datePrefixWithoutDue": 163,
+    "drivePathsWithoutUrl": 3,
+    "maxCardsInList": 295,
+    "recurrenceRules": 0,
+    "duplicateCardIdGroups": 0,
+    "duplicateNormalizedTitleGroups": 61,
+    "findings": {
+      "template_card": 29,
+      "creator_not_in_board_members": 673,
+      "date_title_without_due": 163,
+      "missing_comments": 83,
+      "unsupported_extension": 23,
+      "over_25_mib": 15,
+      "attachment_badge_mismatch": 3,
+      "comment_author_not_in_board_members": 3,
+      "external_link": 13,
+      "drive_path_without_url": 3,
+      "advanced_checklist_item": 2,
+      "card_in_archived_list": 75
+    }
+  },
+  "byBoard": [
+    {
+      "name": "Master Med",
+      "sourceId": "69c6c0750ff4946f159b3e9e",
+      "cards": 166,
+      "archivedCards": 7,
+      "templates": 2,
+      "openLists": 10,
+      "archivedLists": 0,
+      "cardsInArchivedLists": 0,
+      "attachments": 284,
+      "exportedComments": 9,
+      "missingCommentsByBadge": 11,
+      "actions": 1000,
+      "atActionCap": true,
+      "completedOutsideFinal": 15,
+      "incompleteInFinal": 1,
+      "currentApprovalSelectedActiveList": "APROVADO / AGENDAR",
+      "currentApprovalNextActiveList": "EM APROVAÇÃO",
+      "finalCandidates": [
+        "CONCLUÍDO"
+      ],
+      "findings": {
+        "template_card": 2,
+        "creator_not_in_board_members": 14,
+        "date_title_without_due": 28,
+        "missing_comments": 10,
+        "unsupported_extension": 2,
+        "over_25_mib": 2,
+        "attachment_badge_mismatch": 2,
+        "comment_author_not_in_board_members": 1
+      }
+    },
+    {
+      "name": "SPMAR - Complexo Alto do Tietê",
+      "sourceId": "69cc2095780821c0524d235c",
+      "cards": 9,
+      "archivedCards": 0,
+      "templates": 2,
+      "openLists": 9,
+      "archivedLists": 0,
+      "cardsInArchivedLists": 0,
+      "attachments": 6,
+      "exportedComments": 4,
+      "missingCommentsByBadge": 0,
+      "actions": 122,
+      "atActionCap": false,
+      "completedOutsideFinal": 2,
+      "incompleteInFinal": 0,
+      "currentApprovalSelectedActiveList": "EM APROVAÇÃO",
+      "currentApprovalNextActiveList": "AJUSTES",
+      "finalCandidates": [
+        "CONCLUÍDO"
+      ],
+      "findings": {
+        "template_card": 2,
+        "creator_not_in_board_members": 3,
+        "over_25_mib": 1
+      }
+    },
+    {
+      "name": "Liquitudo",
+      "sourceId": "69c6c154f0478dc486ed668d",
+      "cards": 29,
+      "archivedCards": 6,
+      "templates": 2,
+      "openLists": 5,
+      "archivedLists": 5,
+      "cardsInArchivedLists": 0,
+      "attachments": 40,
+      "exportedComments": 11,
+      "missingCommentsByBadge": 0,
+      "actions": 312,
+      "atActionCap": false,
+      "completedOutsideFinal": 8,
+      "incompleteInFinal": 1,
+      "currentApprovalSelectedActiveList": "EM APROVAÇÃO",
+      "currentApprovalNextActiveList": "APROVADO - CONCLUÍDO",
+      "finalCandidates": [
+        "APROVADO - CONCLUÍDO"
+      ],
+      "findings": {
+        "template_card": 2,
+        "creator_not_in_board_members": 2,
+        "date_title_without_due": 1
+      }
+    },
+    {
+      "name": "_Formula Group",
+      "sourceId": "69c6c00c4828d3840d2657be",
+      "cards": 18,
+      "archivedCards": 1,
+      "templates": 2,
+      "openLists": 9,
+      "archivedLists": 0,
+      "cardsInArchivedLists": 0,
+      "attachments": 0,
+      "exportedComments": 0,
+      "missingCommentsByBadge": 0,
+      "actions": 234,
+      "atActionCap": false,
+      "completedOutsideFinal": 2,
+      "incompleteInFinal": 0,
+      "currentApprovalSelectedActiveList": "EM APROVAÇÃO",
+      "currentApprovalNextActiveList": "AJUSTES",
+      "finalCandidates": [
+        "CONCLUÍDO"
+      ],
+      "findings": {
+        "template_card": 2,
+        "creator_not_in_board_members": 2
+      }
+    },
+    {
+      "name": "SUPERBOM",
+      "sourceId": "69c3e1ef35b848ba043eebeb",
+      "cards": 165,
+      "archivedCards": 3,
+      "templates": 2,
+      "openLists": 9,
+      "archivedLists": 1,
+      "cardsInArchivedLists": 0,
+      "attachments": 69,
+      "exportedComments": 8,
+      "missingCommentsByBadge": 11,
+      "actions": 1000,
+      "atActionCap": true,
+      "completedOutsideFinal": 15,
+      "incompleteInFinal": 0,
+      "currentApprovalSelectedActiveList": "EM APROVAÇÃO",
+      "currentApprovalNextActiveList": "AJUSTES",
+      "finalCandidates": [
+        "CONCLUÍDO"
+      ],
+      "findings": {
+        "template_card": 2,
+        "creator_not_in_board_members": 19,
+        "missing_comments": 11,
+        "external_link": 2
+      }
+    },
+    {
+      "name": "Master Health",
+      "sourceId": "69c6c09d6908077e103bf0be",
+      "cards": 135,
+      "archivedCards": 2,
+      "templates": 2,
+      "openLists": 9,
+      "archivedLists": 0,
+      "cardsInArchivedLists": 0,
+      "attachments": 161,
+      "exportedComments": 11,
+      "missingCommentsByBadge": 15,
+      "actions": 1000,
+      "atActionCap": true,
+      "completedOutsideFinal": 8,
+      "incompleteInFinal": 0,
+      "currentApprovalSelectedActiveList": "EM APROVAÇÃO",
+      "currentApprovalNextActiveList": "AJUSTES",
+      "finalCandidates": [
+        "CONCLUÍDO"
+      ],
+      "findings": {
+        "template_card": 2,
+        "creator_not_in_board_members": 5,
+        "missing_comments": 13,
+        "drive_path_without_url": 1,
+        "advanced_checklist_item": 2
+      }
+    },
+    {
+      "name": "Cafu Camp",
+      "sourceId": "69ce9064d3c6419d08dd88d6",
+      "cards": 19,
+      "archivedCards": 0,
+      "templates": 2,
+      "openLists": 9,
+      "archivedLists": 0,
+      "cardsInArchivedLists": 0,
+      "attachments": 13,
+      "exportedComments": 0,
+      "missingCommentsByBadge": 0,
+      "actions": 240,
+      "atActionCap": false,
+      "completedOutsideFinal": 1,
+      "incompleteInFinal": 0,
+      "currentApprovalSelectedActiveList": "EM APROVAÇÃO",
+      "currentApprovalNextActiveList": "AJUSTES",
+      "finalCandidates": [
+        "CONCLUÍDO"
+      ],
+      "findings": {
+        "template_card": 2,
+        "creator_not_in_board_members": 19
+      }
+    },
+    {
+      "name": "Primordial cuidados",
+      "sourceId": "69c6c030d78c3436e5508923",
+      "cards": 104,
+      "archivedCards": 0,
+      "templates": 2,
+      "openLists": 10,
+      "archivedLists": 0,
+      "cardsInArchivedLists": 0,
+      "attachments": 74,
+      "exportedComments": 5,
+      "missingCommentsByBadge": 2,
+      "actions": 1000,
+      "atActionCap": true,
+      "completedOutsideFinal": 4,
+      "incompleteInFinal": 0,
+      "currentApprovalSelectedActiveList": "EM APROVAÇÃO",
+      "currentApprovalNextActiveList": "AJUSTES",
+      "finalCandidates": [
+        "CONCLUÍDO"
+      ],
+      "findings": {
+        "template_card": 2,
+        "creator_not_in_board_members": 6,
+        "date_title_without_due": 4,
+        "unsupported_extension": 1,
+        "missing_comments": 2,
+        "comment_author_not_in_board_members": 1
+      }
+    },
+    {
+      "name": "CEVISA",
+      "sourceId": "69c2a65991435669977b3f3f",
+      "cards": 161,
+      "archivedCards": 3,
+      "templates": 2,
+      "openLists": 10,
+      "archivedLists": 1,
+      "cardsInArchivedLists": 0,
+      "attachments": 131,
+      "exportedComments": 8,
+      "missingCommentsByBadge": 25,
+      "actions": 1000,
+      "atActionCap": true,
+      "completedOutsideFinal": 12,
+      "incompleteInFinal": 0,
+      "currentApprovalSelectedActiveList": "EM APROVAÇÃO",
+      "currentApprovalNextActiveList": "AJUSTES",
+      "finalCandidates": [
+        "CONCLUÍDO"
+      ],
+      "findings": {
+        "template_card": 2,
+        "date_title_without_due": 2,
+        "creator_not_in_board_members": 9,
+        "missing_comments": 19,
+        "over_25_mib": 1
+      }
+    },
+    {
+      "name": "Rivellino",
+      "sourceId": "69c6c15f80cc0135c782465f",
+      "cards": 224,
+      "archivedCards": 106,
+      "templates": 3,
+      "openLists": 11,
+      "archivedLists": 3,
+      "cardsInArchivedLists": 75,
+      "attachments": 308,
+      "exportedComments": 25,
+      "missingCommentsByBadge": 15,
+      "actions": 1000,
+      "atActionCap": true,
+      "completedOutsideFinal": 79,
+      "incompleteInFinal": 5,
+      "currentApprovalSelectedActiveList": "EM APROVAÇÃO",
+      "currentApprovalNextActiveList": "AJUSTES",
+      "finalCandidates": [
+        "CONCLUÍDO"
+      ],
+      "findings": {
+        "template_card": 3,
+        "creator_not_in_board_members": 133,
+        "date_title_without_due": 41,
+        "card_in_archived_list": 75,
+        "missing_comments": 12,
+        "external_link": 5,
+        "over_25_mib": 8,
+        "unsupported_extension": 13,
+        "drive_path_without_url": 2
+      }
+    },
+    {
+      "name": "SPMAR",
+      "sourceId": "69c6c052fd24c610bedb958a",
+      "cards": 133,
+      "archivedCards": 11,
+      "templates": 2,
+      "openLists": 9,
+      "archivedLists": 0,
+      "cardsInArchivedLists": 0,
+      "attachments": 143,
+      "exportedComments": 7,
+      "missingCommentsByBadge": 3,
+      "actions": 1000,
+      "atActionCap": true,
+      "completedOutsideFinal": 9,
+      "incompleteInFinal": 1,
+      "currentApprovalSelectedActiveList": "EM APROVAÇÃO",
+      "currentApprovalNextActiveList": "AJUSTES",
+      "finalCandidates": [
+        "CONCLUÍDO"
+      ],
+      "findings": {
+        "template_card": 2,
+        "date_title_without_due": 15,
+        "creator_not_in_board_members": 86,
+        "unsupported_extension": 3,
+        "over_25_mib": 1,
+        "missing_comments": 3
+      }
+    },
+    {
+      "name": "TGA Group",
+      "sourceId": "69c9bbbfa25c014331185e7e",
+      "cards": 218,
+      "archivedCards": 17,
+      "templates": 2,
+      "openLists": 10,
+      "archivedLists": 0,
+      "cardsInArchivedLists": 0,
+      "attachments": 254,
+      "exportedComments": 21,
+      "missingCommentsByBadge": 20,
+      "actions": 1000,
+      "atActionCap": true,
+      "completedOutsideFinal": 13,
+      "incompleteInFinal": 3,
+      "currentApprovalSelectedActiveList": "EM APROVAÇÃO",
+      "currentApprovalNextActiveList": "AJUSTES",
+      "finalCandidates": [
+        "CONCLUÍDO"
+      ],
+      "findings": {
+        "creator_not_in_board_members": 17,
+        "template_card": 2,
+        "missing_comments": 11,
+        "external_link": 4,
+        "date_title_without_due": 53,
+        "unsupported_extension": 1,
+        "over_25_mib": 2,
+        "comment_author_not_in_board_members": 1
+      }
+    },
+    {
+      "name": "Deputada Leci Brandão",
+      "sourceId": "69c6c043e1499cc2979581ee",
+      "cards": 375,
+      "archivedCards": 222,
+      "templates": 2,
+      "openLists": 9,
+      "archivedLists": 0,
+      "cardsInArchivedLists": 0,
+      "attachments": 63,
+      "exportedComments": 0,
+      "missingCommentsByBadge": 3,
+      "actions": 1000,
+      "atActionCap": true,
+      "completedOutsideFinal": 5,
+      "incompleteInFinal": 1,
+      "currentApprovalSelectedActiveList": "EM APROVAÇÃO",
+      "currentApprovalNextActiveList": "AJUSTES",
+      "finalCandidates": [
+        "CONCLUÍDO"
+      ],
+      "findings": {
+        "creator_not_in_board_members": 348,
+        "date_title_without_due": 19,
+        "missing_comments": 2,
+        "external_link": 2,
+        "template_card": 2,
+        "attachment_badge_mismatch": 1,
+        "unsupported_extension": 3
+      }
+    },
+    {
+      "name": "Magik",
+      "sourceId": "69c6c181df2f45ff5c4cf8d3",
+      "cards": 10,
+      "archivedCards": 0,
+      "templates": 2,
+      "openLists": 9,
+      "archivedLists": 0,
+      "cardsInArchivedLists": 0,
+      "attachments": 0,
+      "exportedComments": 0,
+      "missingCommentsByBadge": 0,
+      "actions": 58,
+      "atActionCap": false,
+      "completedOutsideFinal": 0,
+      "incompleteInFinal": 0,
+      "currentApprovalSelectedActiveList": "EM APROVAÇÃO",
+      "currentApprovalNextActiveList": "AJUSTES",
+      "finalCandidates": [
+        "CONCLUÍDO"
+      ],
+      "findings": {
+        "template_card": 2,
+        "creator_not_in_board_members": 10
+      }
+    }
+  ],
+  "listPatterns": [
+    {
+      "key": "ajustes",
+      "variants": [
+        "AJUSTES"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Deputada Leci Brandão",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "instances": 14,
+      "archivedInstances": 1,
+      "cards": 13
+    },
+    {
+      "key": "aprovado",
+      "variants": [
+        "APROVADO"
+      ],
+      "boards": [
+        "Liquitudo"
+      ],
+      "instances": 1,
+      "archivedInstances": 1,
+      "cards": 0
+    },
+    {
+      "key": "aprovado - concluido",
+      "variants": [
+        "APROVADO - CONCLUÍDO"
+      ],
+      "boards": [
+        "Liquitudo"
+      ],
+      "instances": 1,
+      "archivedInstances": 0,
+      "cards": 10
+    },
+    {
+      "key": "aprovado / agendar",
+      "variants": [
+        "APROVADO / AGENDAR"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Deputada Leci Brandão",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "instances": 14,
+      "archivedInstances": 1,
+      "cards": 17
+    },
+    {
+      "key": "audiovisual",
+      "variants": [
+        "AUDIOVISUAL"
+      ],
+      "boards": [
+        "Rivellino"
+      ],
+      "instances": 1,
+      "archivedInstances": 0,
+      "cards": 0
+    },
+    {
+      "key": "caixa de entrada",
+      "variants": [
+        "CAIXA DE ENTRADA"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "instances": 12,
+      "archivedInstances": 0,
+      "cards": 119
+    },
+    {
+      "key": "captacao | reuniao",
+      "variants": [
+        "CAPTACÃO | REUNIÃO",
+        "CAPTAÇÃO | REUNIÃO"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Deputada Leci Brandão",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "instances": 14,
+      "archivedInstances": 0,
+      "cards": 28
+    },
+    {
+      "key": "concluido",
+      "variants": [
+        "CONCLUÍDO"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Deputada Leci Brandão",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "instances": 13,
+      "archivedInstances": 0,
+      "cards": 1079
+    },
+    {
+      "key": "documentos",
+      "variants": [
+        "DOCUMENTOS"
+      ],
+      "boards": [
+        "Master Med"
+      ],
+      "instances": 1,
+      "archivedInstances": 0,
+      "cards": 8
+    },
+    {
+      "key": "em aprovacao",
+      "variants": [
+        "EM APROVAÇÃO"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Deputada Leci Brandão",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "instances": 14,
+      "archivedInstances": 0,
+      "cards": 31
+    },
+    {
+      "key": "em planejamento",
+      "variants": [
+        "EM PLANEJAMENTO"
+      ],
+      "boards": [
+        "CEVISA",
+        "SUPERBOM"
+      ],
+      "instances": 2,
+      "archivedInstances": 2,
+      "cards": 0
+    },
+    {
+      "key": "em producao",
+      "variants": [
+        "EM PRODUÇÃO"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Deputada Leci Brandão",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "instances": 14,
+      "archivedInstances": 0,
+      "cards": 2
+    },
+    {
+      "key": "ideias",
+      "variants": [
+        "IDEIAS"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Primordial cuidados",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "_Formula Group"
+      ],
+      "instances": 9,
+      "archivedInstances": 1,
+      "cards": 6
+    },
+    {
+      "key": "jobs",
+      "variants": [
+        "JOBS"
+      ],
+      "boards": [
+        "Deputada Leci Brandão",
+        "Master Med",
+        "Rivellino",
+        "SPMAR",
+        "TGA Group"
+      ],
+      "instances": 5,
+      "archivedInstances": 0,
+      "cards": 17
+    },
+    {
+      "key": "planejamento",
+      "variants": [
+        "PLANEJAMENTO"
+      ],
+      "boards": [
+        "Deputada Leci Brandão",
+        "SPMAR"
+      ],
+      "instances": 2,
+      "archivedInstances": 0,
+      "cards": 307
+    },
+    {
+      "key": "revisao interna",
+      "variants": [
+        "REVISÃO INTERNA"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Deputada Leci Brandão",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "instances": 14,
+      "archivedInstances": 1,
+      "cards": 28
+    },
+    {
+      "key": "rivellino",
+      "variants": [
+        "RIVELLINO"
+      ],
+      "boards": [
+        "Rivellino"
+      ],
+      "instances": 1,
+      "archivedInstances": 1,
+      "cards": 6
+    },
+    {
+      "key": "rivellino | jobs",
+      "variants": [
+        "RIVELLINO | JOBS"
+      ],
+      "boards": [
+        "Rivellino"
+      ],
+      "instances": 1,
+      "archivedInstances": 1,
+      "cards": 16
+    },
+    {
+      "key": "rivellino | posts",
+      "variants": [
+        "RIVELLINO | POSTS"
+      ],
+      "boards": [
+        "Rivellino"
+      ],
+      "instances": 1,
+      "archivedInstances": 1,
+      "cards": 53
+    },
+    {
+      "key": "trafego pago",
+      "variants": [
+        "Tráfego Pago"
+      ],
+      "boards": [
+        "CEVISA",
+        "Primordial cuidados",
+        "Rivellino",
+        "TGA Group"
+      ],
+      "instances": 4,
+      "archivedInstances": 0,
+      "cards": 26
+    }
+  ],
+  "labelPatterns": [
+    {
+      "key": "",
+      "names": [
+        ""
+      ],
+      "colors": [
+        "green"
+      ],
+      "boards": [
+        "CEVISA"
+      ],
+      "definitions": 1,
+      "cardLinks": 1
+    },
+    {
+      "key": "adm",
+      "names": [
+        "ADM"
+      ],
+      "colors": [
+        "black_light"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Deputada Leci Brandão",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "definitions": 14,
+      "cardLinks": 0
+    },
+    {
+      "key": "ajuda noisss",
+      "names": [
+        "ajuda noisss"
+      ],
+      "colors": [
+        "red"
+      ],
+      "boards": [
+        "Rivellino"
+      ],
+      "definitions": 1,
+      "cardLinks": 1
+    },
+    {
+      "key": "ajuste",
+      "names": [
+        "AJUSTE"
+      ],
+      "colors": [
+        "orange"
+      ],
+      "boards": [
+        "Cafu Camp"
+      ],
+      "definitions": 1,
+      "cardLinks": 0
+    },
+    {
+      "key": "arrasou <3",
+      "names": [
+        "ARRASOU <3"
+      ],
+      "colors": [
+        "pink"
+      ],
+      "boards": [
+        "Rivellino"
+      ],
+      "definitions": 1,
+      "cardLinks": 2
+    },
+    {
+      "key": "atendimento",
+      "names": [
+        "Atendimento"
+      ],
+      "colors": [
+        "yellow"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Deputada Leci Brandão",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "definitions": 14,
+      "cardLinks": 46
+    },
+    {
+      "key": "audiovisual",
+      "names": [
+        "Audiovisual"
+      ],
+      "colors": [
+        "red"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Deputada Leci Brandão",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "definitions": 14,
+      "cardLinks": 326
+    },
+    {
+      "key": "carrossel",
+      "names": [
+        "CARROSSEL"
+      ],
+      "colors": [
+        "purple_light"
+      ],
+      "boards": [
+        "Cafu Camp",
+        "Rivellino"
+      ],
+      "definitions": 2,
+      "cardLinks": 8
+    },
+    {
+      "key": "criacao",
+      "names": [
+        "Criação"
+      ],
+      "colors": [
+        "purple"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Deputada Leci Brandão",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "definitions": 14,
+      "cardLinks": 781
+    },
+    {
+      "key": "desenvolvimento",
+      "names": [
+        "Desenvolvimento"
+      ],
+      "colors": [
+        "blue_dark"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Deputada Leci Brandão",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "definitions": 14,
+      "cardLinks": 15
+    },
+    {
+      "key": "estatico",
+      "names": [
+        "ESTÁTICO"
+      ],
+      "colors": [
+        "purple"
+      ],
+      "boards": [
+        "Cafu Camp",
+        "Rivellino"
+      ],
+      "definitions": 2,
+      "cardLinks": 17
+    },
+    {
+      "key": "motion graphics",
+      "names": [
+        "Motion Graphics"
+      ],
+      "colors": [
+        "black"
+      ],
+      "boards": [
+        "Cafu Camp"
+      ],
+      "definitions": 1,
+      "cardLinks": 0
+    },
+    {
+      "key": "prioridade",
+      "names": [
+        "PRIORIDADE"
+      ],
+      "colors": [
+        "red"
+      ],
+      "boards": [
+        "Cafu Camp"
+      ],
+      "definitions": 1,
+      "cardLinks": 0
+    },
+    {
+      "key": "revisao arte",
+      "names": [
+        "REVISÃO ARTE"
+      ],
+      "colors": [
+        "yellow_dark"
+      ],
+      "boards": [
+        "Cafu Camp",
+        "Rivellino"
+      ],
+      "definitions": 2,
+      "cardLinks": 2
+    },
+    {
+      "key": "social media",
+      "names": [
+        "Social Media"
+      ],
+      "colors": [
+        "blue"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Deputada Leci Brandão",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "definitions": 14,
+      "cardLinks": 442
+    },
+    {
+      "key": "stories",
+      "names": [
+        "STORIES"
+      ],
+      "colors": [
+        "purple_dark"
+      ],
+      "boards": [
+        "Rivellino"
+      ],
+      "definitions": 1,
+      "cardLinks": 2
+    },
+    {
+      "key": "story",
+      "names": [
+        "STORY"
+      ],
+      "colors": [
+        "purple_light"
+      ],
+      "boards": [
+        "Cafu Camp"
+      ],
+      "definitions": 1,
+      "cardLinks": 0
+    },
+    {
+      "key": "trafego pago",
+      "names": [
+        "Tráfego Pago"
+      ],
+      "colors": [
+        "green"
+      ],
+      "boards": [
+        "CEVISA",
+        "Cafu Camp",
+        "Deputada Leci Brandão",
+        "Liquitudo",
+        "Magik",
+        "Master Health",
+        "Master Med",
+        "Primordial cuidados",
+        "Rivellino",
+        "SPMAR",
+        "SPMAR - Complexo Alto do Tietê",
+        "SUPERBOM",
+        "TGA Group",
+        "_Formula Group"
+      ],
+      "definitions": 14,
+      "cardLinks": 41
+    },
+    {
+      "key": "urgencia",
+      "names": [
+        "URGÊNCIA"
+      ],
+      "colors": [
+        "red"
+      ],
+      "boards": [
+        "Cafu Camp",
+        "Rivellino"
+      ],
+      "definitions": 2,
+      "cardLinks": 1
+    },
+    {
+      "key": "video",
+      "names": [
+        "VÍDEO"
+      ],
+      "colors": [
+        "black_light"
+      ],
+      "boards": [
+        "Cafu Camp",
+        "Rivellino"
+      ],
+      "definitions": 2,
+      "cardLinks": 8
+    }
+  ],
+  "fieldPatterns": [
+    {
+      "key": "pasta do drive",
+      "names": [
+        "Pasta do Drive"
+      ],
+      "types": [
+        "text"
+      ],
+      "boards": 14,
+      "optionVariants": [],
+      "populatedCards": 757,
+      "values": {
+        "(preenchido)": 757
+      }
+    },
+    {
+      "key": "prioridade",
+      "names": [
+        "Prioridade"
+      ],
+      "types": [
+        "list"
+      ],
+      "boards": 14,
+      "optionVariants": [
+        "Alta",
+        "Normal",
+        "Urgente"
+      ],
+      "populatedCards": 924,
+      "values": {
+        "Normal": 671,
+        "Alta": 216,
+        "Urgente": 37
+      }
+    },
+    {
+      "key": "tipo de entrega",
+      "names": [
+        "Tipo de Entrega"
+      ],
+      "types": [
+        "list"
+      ],
+      "boards": 14,
+      "optionVariants": [
+        "Campanha Ads",
+        "Carrossel",
+        "Carrossel + Stories",
+        "Carrossel + Story",
+        "Landing Page",
+        "Material Gráfico",
+        "Outro",
+        "Post Estático",
+        "Post Estático + Story",
+        "Post animado",
+        "Post animado (Feed e Story)",
+        "Post estático + Story",
+        "Reels / Vídeo Curto",
+        "Relatório",
+        "Story",
+        "Vídeo Longo",
+        "Website"
+      ],
+      "populatedCards": 935,
+      "values": {
+        "Outro": 72,
+        "Reels / Vídeo Curto": 222,
+        "Post Estático": 138,
+        "Carrossel": 118,
+        "Story": 29,
+        "Material Gráfico": 29,
+        "Website": 3,
+        "Post animado": 3,
+        "Post Estático + Story": 97,
+        "Carrossel + Stories": 66,
+        "Vídeo Longo": 7,
+        "Post estático + Story": 110,
+        "Carrossel + Story": 13,
+        "Post animado (Feed e Story)": 6,
+        "Campanha Ads": 15,
+        "Landing Page": 7
+      }
+    }
+  ]
+}

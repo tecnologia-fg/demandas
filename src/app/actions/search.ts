@@ -14,6 +14,8 @@ export async function searchCards(query: string) {
     const num = /^\d+$/.test(q) ? Number(q) : null;
     const cards = await db.card.findMany({
       where: {
+        isTemplate: false,
+        column: { archivedAt: null },
         board: { archivedAt: null },
         OR: [{ title: { contains: q } }, ...(num ? [{ number: num }] : []), { description: { contains: q } }, { client: { name: { contains: q } } }],
       },

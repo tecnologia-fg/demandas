@@ -326,6 +326,13 @@ export function CardModal({ cardId, onClose, onChange, onRemoved, onOpenOther }:
 
             <ApprovalSection card={card} onSummary={(sum) => applySummary(sum)} onReload={load} />
 
+            {card.trelloOrigin && <section className="grid gap-2 rounded-2xl bg-surface-2 p-4 text-sm">
+              <h2 className="font-semibold">Dados do Trello</h2>
+              {card.trelloOrigin.url && <a className="underline" href={card.trelloOrigin.url} target="_blank" rel="noopener noreferrer">Abrir card original</a>}
+              <p>Lista de origem: {card.trelloOrigin.list}</p>
+              {card.trelloOrigin.assignees.length > 0 && <p>Responsáveis na origem: {card.trelloOrigin.assignees.map((person) => person.name).join(", ")}</p>}
+              {card.trelloOrigin.fields.map((field, index) => <p key={index}>{field.name}: {field.value || "Não preenchido"}</p>)}
+            </section>}
             <Conversation card={card} patch={patch} />
           </div>
 
