@@ -1,5 +1,7 @@
 # Pesquisa de importação Trello → Dmanda
 
+**Carga definitiva concluída em 23/10/2026:** [publicação, transferência e auditoria na VPS](production-cutover.md). A conferência passou para 33 quadros, 3.737 cards, 425 comentários e 1.513 arquivos, com clientes, etiquetas e usuários aprovados. Os relatórios reais e credenciais continuam fora do Git. As seções seguintes registram o histórico da implementação.
+
 **Atualização de 23/10/2026:** implementação e associações aprovadas no ensaio local, conforme [revisão antes da publicação](pre-release-review.md). São 24 clientes em 27 quadros, seis quadros sem cliente, 18 etiquetas consolidadas e 12 usuários associados. Cafu Academy e Cafu Camp são clientes separados. O [executor e preparação para a VPS](final-import.md) descreve a carga; os IDs locais de clientes/etiquetas exigem correspondências explícitas no destino. As [decisões de conteúdo](migration-decisions.md) foram confirmadas pelo usuário. Os trechos seguintes documentam etapas históricas.
 
 **Revisão de associações:** [clientes pelo nome dos quadros, merge/ignorar etiquetas e reversão](association-review.md). Tela administrativa em `/configuracoes/importar-trello/etiquetas`.
